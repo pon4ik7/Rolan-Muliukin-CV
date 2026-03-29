@@ -12,7 +12,8 @@ This project was developed with branch-per-feature workflow:
 ## Git Log (graph style)
 
 ```text
-*   6673330 (HEAD -> feature/docs, dev) merge: integrate backend tests
+* 6f089fb (HEAD -> feature/docs) docs: add setup guide and development workflow log
+*   6673330 (dev) merge: integrate backend tests
 |\  
 | * 90bef99 (feature/testing) test: add unit tests for repository and service layers
 |/  
