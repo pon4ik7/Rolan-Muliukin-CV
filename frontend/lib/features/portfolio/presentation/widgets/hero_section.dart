@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/utils/link_utils.dart';
@@ -9,12 +10,18 @@ import 'skill_chip.dart';
 class HeroSection extends StatelessWidget {
   const HeroSection({
     required this.profile,
+    required this.i18n,
+    required this.selectedCvLanguage,
+    required this.onDownloadCv,
     required this.onProjectsTap,
     required this.onContactTap,
     super.key,
   });
 
   final ProfileModel profile;
+  final AppLocalization i18n;
+  final AppLanguage selectedCvLanguage;
+  final VoidCallback? onDownloadCv;
   final VoidCallback onProjectsTap;
   final VoidCallback onContactTap;
 
@@ -94,39 +101,33 @@ class HeroSection extends StatelessWidget {
                 FilledButton.icon(
                   onPressed: onProjectsTap,
                   icon: const Icon(Icons.rocket_launch_outlined),
-                  label: const Text('View Projects'),
+                  label: Text(i18n.viewProjects),
                 ),
                 OutlinedButton.icon(
                   onPressed: onContactTap,
                   icon: const Icon(Icons.mail_outline),
-                  label: const Text('Contact Me'),
+                  label: Text(i18n.contactMe),
                 ),
-                if (profile.links.hasCvEn)
+                if (onDownloadCv != null)
                   OutlinedButton.icon(
-                    onPressed: () => launchExternalLink(profile.links.cvDownloadEn),
+                    onPressed: onDownloadCv,
                     icon: const Icon(Icons.download_outlined),
-                    label: const Text('Download CV (EN)'),
-                  ),
-                if (profile.links.hasCvRu)
-                  OutlinedButton.icon(
-                    onPressed: () => launchExternalLink(profile.links.cvDownloadRu),
-                    icon: const Icon(Icons.download_outlined),
-                    label: const Text('Download CV (RU)'),
+                    label: Text(i18n.downloadCvLabel(selectedCvLanguage)),
                   ),
                 TextButton.icon(
                   onPressed: () => launchExternalLink(profile.links.github),
                   icon: const Icon(Icons.code),
-                  label: const Text('GitHub'),
+                  label: Text(i18n.github),
                 ),
                 TextButton.icon(
                   onPressed: () => launchExternalLink(profile.links.leetcode),
                   icon: const Icon(Icons.bolt_outlined),
-                  label: const Text('LeetCode'),
+                  label: Text(i18n.leetcode),
                 ),
                 TextButton.icon(
                   onPressed: () => launchExternalLink(profile.links.codeforces),
                   icon: const Icon(Icons.leaderboard_outlined),
-                  label: const Text('Codeforces'),
+                  label: Text(i18n.codeforces),
                 ),
               ],
             ),

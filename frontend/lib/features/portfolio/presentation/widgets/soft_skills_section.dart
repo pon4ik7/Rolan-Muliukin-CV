@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
 import 'glass_card.dart';
 import 'section_title.dart';
 
 class SoftSkillsSection extends StatelessWidget {
-  const SoftSkillsSection({required this.profile, super.key});
+  const SoftSkillsSection({required this.profile, required this.i18n, super.key});
 
   final ProfileModel profile;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Soft Skills',
-          subtitle: 'How I Work With Teams',
+        SectionTitle(
+          title: i18n.softSkillsTitle,
+          subtitle: i18n.softSkillsSubtitle,
         ),
         const SizedBox(height: 20),
         GlassCard(

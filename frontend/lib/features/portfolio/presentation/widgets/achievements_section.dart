@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/achievement_model.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/utils/link_utils.dart';
@@ -7,18 +8,19 @@ import 'glass_card.dart';
 import 'section_title.dart';
 
 class AchievementsSection extends StatelessWidget {
-  const AchievementsSection({required this.items, super.key});
+  const AchievementsSection({required this.items, required this.i18n, super.key});
 
   final List<AchievementModel> items;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Olympiads & Achievements',
-          subtitle: 'Competitive Results',
+        SectionTitle(
+          title: i18n.achievementsTitle,
+          subtitle: i18n.achievementsSubtitle,
         ),
         const SizedBox(height: 20),
         ...items.map(
@@ -65,7 +67,7 @@ class AchievementsSection extends StatelessWidget {
                   if (item.link.isNotEmpty)
                     IconButton(
                       onPressed: () => launchExternalLink(item.link),
-                      tooltip: 'Open certificate',
+                      tooltip: i18n.openCertificate,
                       icon: const Icon(Icons.open_in_new),
                     ),
                 ],

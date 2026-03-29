@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
 import 'glass_card.dart';
 import 'section_title.dart';
 
 class AboutSection extends StatelessWidget {
-  const AboutSection({required this.profile, super.key});
+  const AboutSection({required this.profile, required this.i18n, super.key});
 
   final ProfileModel profile;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'About', subtitle: 'Engineering Mindset'),
+        SectionTitle(title: i18n.aboutTitle, subtitle: i18n.aboutSubtitle),
         const SizedBox(height: 20),
         GlassCard(
           child: Column(

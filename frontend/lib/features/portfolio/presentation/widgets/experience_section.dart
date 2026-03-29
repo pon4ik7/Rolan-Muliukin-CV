@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/experience_model.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'glass_card.dart';
@@ -7,18 +8,19 @@ import 'section_title.dart';
 import 'skill_chip.dart';
 
 class ExperienceSection extends StatelessWidget {
-  const ExperienceSection({required this.items, super.key});
+  const ExperienceSection({required this.items, required this.i18n, super.key});
 
   final List<ExperienceModel> items;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Experience',
-          subtitle: 'Production-Oriented Team Work',
+        SectionTitle(
+          title: i18n.experienceTitle,
+          subtitle: i18n.experienceSubtitle,
         ),
         const SizedBox(height: 20),
         ...items.map(

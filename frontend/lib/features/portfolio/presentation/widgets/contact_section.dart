@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/utils/link_utils.dart';
@@ -8,18 +9,27 @@ import 'glass_card.dart';
 import 'section_title.dart';
 
 class ContactSection extends StatelessWidget {
-  const ContactSection({required this.profile, super.key});
+  const ContactSection({
+    required this.profile,
+    required this.i18n,
+    required this.selectedCvLanguage,
+    required this.onDownloadCv,
+    super.key,
+  });
 
   final ProfileModel profile;
+  final AppLocalization i18n;
+  final AppLanguage selectedCvLanguage;
+  final VoidCallback? onDownloadCv;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Contact',
-          subtitle: "Let's Build Great Backend Products",
+        SectionTitle(
+          title: i18n.contactTitle,
+          subtitle: i18n.contactSubtitle,
         ),
         const SizedBox(height: 20),
         GlassCard(
@@ -27,8 +37,7 @@ class ContactSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Open to internship and junior backend opportunities. '
-                'If you are hiring for Go or backend roles, feel free to reach out.',
+                i18n.contactIntro,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 18),
@@ -48,29 +57,23 @@ class ContactSection extends StatelessWidget {
                       );
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Email copied to clipboard')),
+                          SnackBar(content: Text(i18n.emailCopied)),
                         );
                       }
                     },
                     icon: const Icon(Icons.copy),
-                    label: const Text('Copy Email'),
+                    label: Text(i18n.copyEmail),
                   ),
                   OutlinedButton.icon(
                     onPressed: () => launchExternalLink(profile.links.telegram),
                     icon: const Icon(Icons.send_outlined),
-                    label: const Text('Telegram'),
+                    label: Text(i18n.telegram),
                   ),
-                  if (profile.links.hasCvEn)
+                  if (onDownloadCv != null)
                     OutlinedButton.icon(
-                      onPressed: () => launchExternalLink(profile.links.cvDownloadEn),
+                      onPressed: onDownloadCv,
                       icon: const Icon(Icons.download_outlined),
-                      label: const Text('Download CV (EN)'),
-                    ),
-                  if (profile.links.hasCvRu)
-                    OutlinedButton.icon(
-                      onPressed: () => launchExternalLink(profile.links.cvDownloadRu),
-                      icon: const Icon(Icons.download_outlined),
-                      label: const Text('Download CV (RU)'),
+                      label: Text(i18n.downloadCvLabel(selectedCvLanguage)),
                     ),
                 ],
               ),

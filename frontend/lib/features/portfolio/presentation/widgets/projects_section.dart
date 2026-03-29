@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/project_model.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/utils/link_utils.dart';
@@ -8,18 +9,19 @@ import 'section_title.dart';
 import 'skill_chip.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({required this.items, super.key});
+  const ProjectsSection({required this.items, required this.i18n, super.key});
 
   final List<ProjectModel> items;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Projects',
-          subtitle: 'Backend Systems I Built',
+        SectionTitle(
+          title: i18n.projectsTitle,
+          subtitle: i18n.projectsSubtitle,
         ),
         const SizedBox(height: 20),
         Wrap(
@@ -57,7 +59,7 @@ class ProjectsSection extends StatelessWidget {
                             if (item.repository.isNotEmpty)
                               IconButton(
                                 onPressed: () => launchExternalLink(item.repository),
-                                tooltip: 'Open repository',
+                                tooltip: i18n.openRepository,
                                 icon: const Icon(Icons.open_in_new),
                               ),
                           ],

@@ -4,11 +4,13 @@ class ErrorState extends StatelessWidget {
   const ErrorState({
     required this.message,
     required this.onRetry,
+    required this.retryLabel,
     super.key,
   });
 
   final String message;
   final VoidCallback onRetry;
+  final String retryLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class ErrorState extends StatelessWidget {
                 FilledButton.icon(
                   onPressed: onRetry,
                   icon: const Icon(Icons.refresh),
-                  label: const Text('Retry'),
+                  label: Text(retryLabel),
                 ),
               ],
             ),

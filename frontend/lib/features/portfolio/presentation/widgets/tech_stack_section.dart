@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
 import 'glass_card.dart';
 import 'section_title.dart';
 import 'skill_chip.dart';
 
 class TechStackSection extends StatelessWidget {
-  const TechStackSection({required this.profile, super.key});
+  const TechStackSection({required this.profile, required this.i18n, super.key});
 
   final ProfileModel profile;
+  final AppLocalization i18n;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +19,9 @@ class TechStackSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(
-          title: 'Tech Stack',
-          subtitle: 'Tools I Use To Build Backends',
+        SectionTitle(
+          title: i18n.techStackTitle,
+          subtitle: i18n.techStackSubtitle,
         ),
         const SizedBox(height: 20),
         Wrap(
