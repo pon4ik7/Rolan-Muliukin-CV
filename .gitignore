@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+*.log
+*.tmp
+*.swp
+.env
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/build/
+frontend/.pub-cache/
+backend/bin/
+**/coverage.out
