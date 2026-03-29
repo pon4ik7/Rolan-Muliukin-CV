@@ -49,7 +49,7 @@ class AppTheme {
         onSurface: AppPalette.textPrimary,
       ),
       textTheme: textTheme,
-      cardTheme: const CardThemeData(
+      cardTheme: const CardTheme(
         color: AppPalette.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
