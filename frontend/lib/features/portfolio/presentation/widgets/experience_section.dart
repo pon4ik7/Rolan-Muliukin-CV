@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+
+import '../../../../core/models/experience_model.dart';
+import '../../../../core/theme/app_theme.dart';
+import 'glass_card.dart';
+import 'section_title.dart';
+import 'skill_chip.dart';
+
+class ExperienceSection extends StatelessWidget {
+  const ExperienceSection({required this.items, super.key});
+
+  final List<ExperienceModel> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SectionTitle(
+          title: 'Experience',
+          subtitle: 'Production-Oriented Team Work',
+        ),
+        const SizedBox(height: 20),
+        ...items.map(
+          (item) => Padding(
+            padding: const EdgeInsets.only(bottom: 14),
+            child: GlassCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: const EdgeInsets.only(top: 6, right: 10),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppPalette.primary,
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              item.title,
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                            Text(
+                              item.organization,
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.copyWith(color: AppPalette.secondary),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        item.period,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppPalette.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(item.description),
+                  const SizedBox(height: 12),
+                  ...item.highlights.map(
+                    (point) => Padding(
+                      padding: const EdgeInsets.only(bottom: 6),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(top: 7, right: 8),
+                            child: Icon(
+                              Icons.circle,
+                              size: 7,
+                              color: AppPalette.secondary,
+                            ),
+                          ),
+                          Expanded(child: Text(point)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: item.techStack
+                        .map((skill) => SkillChip(label: skill))
+                        .toList(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
