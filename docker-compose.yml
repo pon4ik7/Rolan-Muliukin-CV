@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      PORT: ${BACKEND_PORT:-8080}
+      DATA_FILE: /app/data/resume.json
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
+      READ_TIMEOUT_SEC: ${READ_TIMEOUT_SEC:-10}
+      WRITE_TIMEOUT_SEC: ${WRITE_TIMEOUT_SEC:-10}
+      SHUTDOWN_TIMEOUT_SEC: ${SHUTDOWN_TIMEOUT_SEC:-10}
+    expose:
+      - "${BACKEND_PORT:-8080}"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        API_BASE_URL: ${FRONTEND_API_BASE_URL:-/api/v1}
+    expose:
+      - "80"
+    restart: unless-stopped
+
+  gateway:
+    image: nginx:1.27-alpine
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "${APP_PORT:-80}:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped

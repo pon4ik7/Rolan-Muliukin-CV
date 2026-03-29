@@ -1,0 +1,261 @@
+{
+  "profile": {
+    "name": "Rolan Muliukin",
+    "role": "Backend Developer",
+    "headline": "Backend developer focused on reliable Go services and practical product impact.",
+    "summary": "Backend Developer with hands-on experience building backend logic and REST APIs. Worked with PostgreSQL, Docker, and external service integrations. Participated in team development of educational and project products, focused on server-side request handling and API design. Fast learner with strong interest in practical engineering challenges.",
+    "availabilityBadge": "Available for internship / junior backend opportunities",
+    "careerFocus": "Focused on growth in backend development, creating real product value, and solving tasks where software engineering, systems thinking, and continuous learning meet.",
+    "contacts": {
+      "phone": "+7 917 754 05 43",
+      "email": "muliukinrolan@mail.ru",
+      "telegram": "@poon4ik7",
+      "location": "Innopolis, Russia"
+    },
+    "links": {
+      "github": "https://github.com/pon4ik7",
+      "leetcode": "https://leetcode.com/u/pon4ic/",
+      "codeforces": "https://codeforces.com/profile/Rolan12334",
+      "telegram": "https://t.me/poon4ik7",
+      "university": "https://innopolis.university/",
+      "cvDownload": "TODO_ADD_PUBLIC_CV_URL",
+      "contactMail": "mailto:muliukinrolan@mail.ru"
+    },
+    "primaryStack": [
+      "Go",
+      "PostgreSQL",
+      "Redis",
+      "RabbitMQ",
+      "Kafka",
+      "Docker",
+      "Nginx",
+      "REST API"
+    ],
+    "techStack": {
+      "Programming Languages": [
+        "Go",
+        "Java",
+        "C++",
+        "C#",
+        "Python"
+      ],
+      "Backend Engineering": [
+        "REST API",
+        "Service Design",
+        "Business Logic",
+        "External API Integration",
+        "HTTP Request Processing"
+      ],
+      "Databases and Messaging": [
+        "PostgreSQL",
+        "SQL",
+        "Redis",
+        "RabbitMQ",
+        "Kafka"
+      ],
+      "Infrastructure and Systems": [
+        "Git",
+        "Docker",
+        "Docker Compose",
+        "Nginx",
+        "Linux",
+        "macOS"
+      ],
+      "Go Ecosystem": [
+        "goroutines",
+        "channels",
+        "context",
+        "middleware",
+        "net/http"
+      ],
+      "Development and Process": [
+        "Testing",
+        "Logging",
+        "Debugging",
+        "Flutter",
+        "SDLC",
+        "Scrum"
+      ]
+    },
+    "education": [
+      {
+        "institution": "Innopolis University",
+        "program": "Information Systems Engineering",
+        "gpa": "4.86/5.0",
+        "period": "2024-2028",
+        "details": "Bachelor track with a backend-focused engineering profile."
+      }
+    ],
+    "additionalEducation": [
+      {
+        "institution": "Algorithmic Practice",
+        "program": "Go, Java, C++ problem solving",
+        "gpa": "",
+        "period": "Ongoing",
+        "details": "Regular problem solving on LeetCode and Codeforces."
+      },
+      {
+        "institution": "C# Programming Course",
+        "program": "From fundamentals to mobile and PC game development in Unity",
+        "gpa": "",
+        "period": "Completed",
+        "details": "147 academic hours."
+      }
+    ],
+    "softSkills": [
+      "Quickly adopts new technologies and tools",
+      "Responsible with deadlines and delivery ownership",
+      "Asks clarifying questions and understands requirements fast",
+      "Works comfortably in teams and welcomes feedback"
+    ]
+  },
+  "experience": [
+    {
+      "id": "backend-developer-2025",
+      "title": "Backend Developer",
+      "organization": "Project-based team development",
+      "period": "May 2025 - August 2026",
+      "description": "Built backend logic and API integrations in Go as part of team products.",
+      "highlights": [
+        "Developed an AI consultant backend for an online store: API integrations and request processing logic in Go.",
+        "Contributed to the Tatar Shower application: implemented backend APIs and an FSM-based notifications flow."
+      ],
+      "techStack": [
+        "Go",
+        "REST API",
+        "PostgreSQL",
+        "Docker",
+        "FSM"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "ai-online-consultant",
+      "name": "AI Online Consultant",
+      "role": "Backend Developer",
+      "description": "Team project for online store AI consulting. Implemented backend services in Go including user registration, dialog history storage, request handling, and external API integration.",
+      "highlights": [
+        "Designed and built core backend modules for user flows and conversation processing.",
+        "Integrated external APIs and ensured stable request handling."
+      ],
+      "techStack": [
+        "Go",
+        "PostgreSQL",
+        "Docker",
+        "REST API"
+      ],
+      "repository": "https://github.com/pon4ik7/online-store-consultant"
+    },
+    {
+      "id": "room-booking-service",
+      "name": "Room Booking Service",
+      "role": "Backend Developer",
+      "description": "Developed a backend service for meeting room booking with authentication, role model, room and schedule management, slot generation, and booking lifecycle operations.",
+      "highlights": [
+        "Implemented JWT authentication and role-based access model (admin/user).",
+        "Added Swagger docs, Docker Compose setup, and unit/integration tests for business flows."
+      ],
+      "techStack": [
+        "Go",
+        "PostgreSQL",
+        "Docker",
+        "REST API",
+        "JWT",
+        "Swagger"
+      ],
+      "repository": "https://github.com/pon4ik7/room-booking-service"
+    },
+    {
+      "id": "tatar-shower",
+      "name": "Tatar Shower",
+      "role": "Backend Developer",
+      "description": "Mobile wellness application helping users build healthy hardening habits. Implemented backend services including user registration, data processing, and API integrations.",
+      "highlights": [
+        "Built core backend endpoints and request processing flows.",
+        "Delivered backend support for app logic and integrations."
+      ],
+      "techStack": [
+        "Go",
+        "PostgreSQL",
+        "Docker",
+        "REST API"
+      ],
+      "repository": "https://github.com/pon4ik7/tatar-shower-app-flutter-go"
+    },
+    {
+      "id": "messenger",
+      "name": "Messenger",
+      "role": "Backend Developer",
+      "description": "Personal messenger project built from scratch. Focused on architecture design, core logic implementation, and stable interaction between system components.",
+      "highlights": [
+        "Designed the project structure and backend architecture.",
+        "Focused on data processing reliability and maintainable service behavior."
+      ],
+      "techStack": [
+        "Go",
+        "PostgreSQL",
+        "Docker",
+        "REST API"
+      ],
+      "repository": "https://github.com/pon4ik7/RESTAPI"
+    },
+    {
+      "id": "casual-pc-game",
+      "name": "GameDev Project: Casual PC Game",
+      "role": "C# / Unity Developer",
+      "description": "Built a prototype and implemented interactions between the character and game world, including UI and visual effects.",
+      "highlights": [
+        "Implemented character-world interaction mechanics.",
+        "Developed game UI and visual effect behavior."
+      ],
+      "techStack": [
+        "C#",
+        "Unity"
+      ],
+      "repository": ""
+    }
+  ],
+  "achievements": [
+    {
+      "id": "icpc-regional",
+      "title": "ICPC Southern and Volga Russia Regional Contest Qualification Stage",
+      "category": "Programming Competitions",
+      "result": "III degree diploma",
+      "description": "International collegiate programming competition achievement.",
+      "link": "https://disk.yandex.ru/i/22P34rYZPhVH5w"
+    },
+    {
+      "id": "rosatom-olympiad",
+      "title": "Rosatom Industry Physics and Mathematics Olympiad (RSOS Level 1)",
+      "category": "Olympiads",
+      "result": "Prize winner, III degree diploma (Physics)",
+      "description": "Awarded in a high-level industry olympiad track.",
+      "link": "https://disk.yandex.ru/i/oA3gZdcOsf_AUA"
+    },
+    {
+      "id": "engineering-olympiad",
+      "title": "Engineering School Olympiad (RSOS Level 2)",
+      "category": "Olympiads",
+      "result": "Prize winner, II degree diploma (Physics)",
+      "description": "Recognized for strong engineering and physics performance.",
+      "link": "https://disk.yandex.ru/i/B8-YWqR3q-Q9AA"
+    },
+    {
+      "id": "future-step-olympiad",
+      "title": "Step into the Future School Olympiad (RSOS Level 2)",
+      "category": "Olympiads",
+      "result": "Prize winner, II degree diploma (Physics)",
+      "description": "Achieved strong results in national-level olympiad competition.",
+      "link": "https://disk.yandex.ru/i/I1m8lKZzLe-Hvg"
+    },
+    {
+      "id": "economics-olympiad",
+      "title": "All-Russian School Olympiad in Economics",
+      "category": "Olympiads",
+      "result": "Regional stage prize winner",
+      "description": "Regional award in economics olympiad.",
+      "link": ""
+    }
+  ]
+}
