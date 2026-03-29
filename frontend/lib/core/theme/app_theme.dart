@@ -49,13 +49,6 @@ class AppTheme {
         onSurface: AppPalette.textPrimary,
       ),
       textTheme: textTheme,
-      cardTheme: const CardTheme(
-        color: AppPalette.surface,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-        ),
-      ),
     );
   }
 }
