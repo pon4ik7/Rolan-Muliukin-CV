@@ -107,6 +107,14 @@ Stop containers:
 docker compose down
 ```
 
+### Alternative via Makefile
+```bash
+make up-build
+make ps
+make logs
+make down
+```
+
 ## Validation Commands
 Backend tests:
 ```bash
