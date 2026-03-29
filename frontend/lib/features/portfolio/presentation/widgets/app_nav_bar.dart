@@ -78,12 +78,20 @@ class AppNavBar extends StatelessWidget {
                   label: const Text('Telegram'),
                 ),
                 const SizedBox(width: 10),
-                FilledButton(
-                  onPressed: profile.links.cvDownload.startsWith('TODO_')
-                      ? null
-                      : () => launchExternalLink(profile.links.cvDownload),
-                  child: const Text('Download CV'),
-                ),
+                if (profile.links.hasCvEn)
+                  FilledButton.icon(
+                    onPressed: () => launchExternalLink(profile.links.cvDownloadEn),
+                    icon: const Icon(Icons.download_outlined),
+                    label: const Text('CV EN'),
+                  ),
+                if (profile.links.hasCvEn && profile.links.hasCvRu)
+                  const SizedBox(width: 8),
+                if (profile.links.hasCvRu)
+                  FilledButton.tonalIcon(
+                    onPressed: () => launchExternalLink(profile.links.cvDownloadRu),
+                    icon: const Icon(Icons.download_outlined),
+                    label: const Text('CV RU'),
+                  ),
               ],
             ),
     );

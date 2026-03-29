@@ -31,13 +31,15 @@ type Contacts struct {
 }
 
 type ExternalLinks struct {
-	GitHub      string `json:"github"`
-	LeetCode    string `json:"leetcode"`
-	Codeforces  string `json:"codeforces"`
-	Telegram    string `json:"telegram"`
-	University  string `json:"university"`
-	CVDownload  string `json:"cvDownload"`
-	ContactMail string `json:"contactMail"`
+	GitHub       string `json:"github"`
+	LeetCode     string `json:"leetcode"`
+	Codeforces   string `json:"codeforces"`
+	Telegram     string `json:"telegram"`
+	University   string `json:"university"`
+	CVDownload   string `json:"cvDownload"`
+	CVDownloadEn string `json:"cvDownloadEn"`
+	CVDownloadRu string `json:"cvDownloadRu"`
+	ContactMail  string `json:"contactMail"`
 }
 
 type Education struct {

@@ -31,8 +31,13 @@ All content is based on `Rolan Muliukin CV.pdf` facts and translated/adapted int
 For links/placeholders management in one place, edit:
 - `backend/data/resume.json` -> `profile.links` block (GitHub, LeetCode, Codeforces, Telegram, CV)
 
-`cvDownload` currently uses placeholder:
-- `TODO_ADD_PUBLIC_CV_URL`
+CV links are configured with:
+- `cvDownloadEn` (English CV)
+- `cvDownloadRu` (Russian CV)
+
+Current local static paths:
+- `/cv/Rolan-Muliukin-CV-English.pdf`
+- `/cv/Rolan-Muliukin-CV.pdf`
 
 ## Project Structure
 ```text

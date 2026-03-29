@@ -101,6 +101,18 @@ class HeroSection extends StatelessWidget {
                   icon: const Icon(Icons.mail_outline),
                   label: const Text('Contact Me'),
                 ),
+                if (profile.links.hasCvEn)
+                  OutlinedButton.icon(
+                    onPressed: () => launchExternalLink(profile.links.cvDownloadEn),
+                    icon: const Icon(Icons.download_outlined),
+                    label: const Text('Download CV (EN)'),
+                  ),
+                if (profile.links.hasCvRu)
+                  OutlinedButton.icon(
+                    onPressed: () => launchExternalLink(profile.links.cvDownloadRu),
+                    icon: const Icon(Icons.download_outlined),
+                    label: const Text('Download CV (RU)'),
+                  ),
                 TextButton.icon(
                   onPressed: () => launchExternalLink(profile.links.github),
                   icon: const Icon(Icons.code),

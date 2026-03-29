@@ -101,6 +101,8 @@ class LinksModel {
     required this.telegram,
     required this.university,
     required this.cvDownload,
+    required this.cvDownloadEn,
+    required this.cvDownloadRu,
     required this.contactMail,
   });
 
@@ -110,16 +112,24 @@ class LinksModel {
   final String telegram;
   final String university;
   final String cvDownload;
+  final String cvDownloadEn;
+  final String cvDownloadRu;
   final String contactMail;
 
+  bool get hasCvEn => cvDownloadEn.isNotEmpty && !cvDownloadEn.startsWith('TODO_');
+  bool get hasCvRu => cvDownloadRu.isNotEmpty && !cvDownloadRu.startsWith('TODO_');
+
   factory LinksModel.fromJson(Map<String, dynamic>? json) {
+    final legacyCv = json?['cvDownload'] as String? ?? '';
     return LinksModel(
       github: json?['github'] as String? ?? '',
       leetcode: json?['leetcode'] as String? ?? '',
       codeforces: json?['codeforces'] as String? ?? '',
       telegram: json?['telegram'] as String? ?? '',
       university: json?['university'] as String? ?? '',
-      cvDownload: json?['cvDownload'] as String? ?? '',
+      cvDownload: legacyCv,
+      cvDownloadEn: json?['cvDownloadEn'] as String? ?? legacyCv,
+      cvDownloadRu: json?['cvDownloadRu'] as String? ?? '',
       contactMail: json?['contactMail'] as String? ?? '',
     );
   }

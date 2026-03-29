@@ -60,6 +60,18 @@ class ContactSection extends StatelessWidget {
                     icon: const Icon(Icons.send_outlined),
                     label: const Text('Telegram'),
                   ),
+                  if (profile.links.hasCvEn)
+                    OutlinedButton.icon(
+                      onPressed: () => launchExternalLink(profile.links.cvDownloadEn),
+                      icon: const Icon(Icons.download_outlined),
+                      label: const Text('Download CV (EN)'),
+                    ),
+                  if (profile.links.hasCvRu)
+                    OutlinedButton.icon(
+                      onPressed: () => launchExternalLink(profile.links.cvDownloadRu),
+                      icon: const Icon(Icons.download_outlined),
+                      label: const Text('Download CV (RU)'),
+                    ),
                 ],
               ),
               const SizedBox(height: 18),
