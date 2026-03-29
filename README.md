@@ -134,6 +134,15 @@ docker compose build backend
 docker compose build frontend
 ```
 
+## CI/CD Test Checks
+GitHub Actions workflow is configured in:
+- `.github/workflows/ci.yml`
+
+What runs automatically on `push` and `pull_request`:
+- backend unit tests (`go test ./...`)
+- docker compose validation (`docker compose config`)
+- backend docker build smoke check (`docker compose build backend`)
+
 ## How to Update Content
 Primary content source:
 - `backend/data/resume.json`
