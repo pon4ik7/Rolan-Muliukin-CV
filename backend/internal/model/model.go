@@ -12,8 +12,10 @@ type Profile struct {
 	Role                string              `json:"role"`
 	Headline            string              `json:"headline"`
 	Summary             string              `json:"summary"`
+	SummaryRu           string              `json:"summaryRu"`
 	AvailabilityBadge   string              `json:"availabilityBadge"`
 	CareerFocus         string              `json:"careerFocus"`
+	CareerFocusRu       string              `json:"careerFocusRu"`
 	Contacts            Contacts            `json:"contacts"`
 	Links               ExternalLinks       `json:"links"`
 	PrimaryStack        []string            `json:"primaryStack"`
@@ -61,13 +63,16 @@ type Experience struct {
 }
 
 type Project struct {
-	ID          string   `json:"id"`
-	Name        string   `json:"name"`
-	Role        string   `json:"role"`
-	Description string   `json:"description"`
-	Highlights  []string `json:"highlights"`
-	TechStack   []string `json:"techStack"`
-	Repository  string   `json:"repository"`
+	ID            string   `json:"id"`
+	Name          string   `json:"name"`
+	Role          string   `json:"role"`
+	RoleRu        string   `json:"roleRu"`
+	Description   string   `json:"description"`
+	DescriptionRu string   `json:"descriptionRu"`
+	Highlights    []string `json:"highlights"`
+	HighlightsRu  []string `json:"highlightsRu"`
+	TechStack     []string `json:"techStack"`
+	Repository    string   `json:"repository"`
 }
 
 type Achievement struct {

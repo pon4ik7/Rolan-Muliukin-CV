@@ -4,8 +4,10 @@ class ProfileModel {
     required this.role,
     required this.headline,
     required this.summary,
+    required this.summaryRu,
     required this.availabilityBadge,
     required this.careerFocus,
+    required this.careerFocusRu,
     required this.contacts,
     required this.links,
     required this.primaryStack,
@@ -19,8 +21,10 @@ class ProfileModel {
   final String role;
   final String headline;
   final String summary;
+  final String summaryRu;
   final String availabilityBadge;
   final String careerFocus;
+  final String careerFocusRu;
   final ContactModel contacts;
   final LinksModel links;
   final List<String> primaryStack;
@@ -44,8 +48,10 @@ class ProfileModel {
       role: json['role'] as String? ?? '',
       headline: json['headline'] as String? ?? '',
       summary: json['summary'] as String? ?? '',
+      summaryRu: json['summaryRu'] as String? ?? '',
       availabilityBadge: json['availabilityBadge'] as String? ?? '',
       careerFocus: json['careerFocus'] as String? ?? '',
+      careerFocusRu: json['careerFocusRu'] as String? ?? '',
       contacts: ContactModel.fromJson(json['contacts'] as Map<String, dynamic>?),
       links: LinksModel.fromJson(json['links'] as Map<String, dynamic>?),
       primaryStack: (json['primaryStack'] as List<dynamic>? ?? [])

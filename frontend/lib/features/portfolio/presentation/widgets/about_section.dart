@@ -13,6 +13,13 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summary = i18n.isRussian && profile.summaryRu.isNotEmpty
+        ? profile.summaryRu
+        : profile.summary;
+    final careerFocus = i18n.isRussian && profile.careerFocusRu.isNotEmpty
+        ? profile.careerFocusRu
+        : profile.careerFocus;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,10 +29,10 @@ class AboutSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(profile.summary, style: Theme.of(context).textTheme.bodyLarge),
+              Text(summary, style: Theme.of(context).textTheme.bodyLarge),
               const SizedBox(height: 16),
               Text(
-                profile.careerFocus,
+                careerFocus,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
