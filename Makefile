@@ -15,7 +15,9 @@ help:
 	@echo "  make config        - Validate compose config"
 	@echo "  make build-backend - Build backend image"
 	@echo "  make build-frontend- Build frontend image"
-	@echo "  make test          - Run backend tests"
+	@echo "  make test-backend  - Run backend tests with coverage"
+	@echo "  make test-frontend - Run frontend tests"
+	@echo "  make test          - Run backend + frontend tests"
 	@echo "  make health        - Check API health endpoint"
 
 .PHONY: up
@@ -54,8 +56,15 @@ build-frontend:
 	@$(COMPOSE) build frontend
 
 .PHONY: test
-test:
-	@cd backend && go test ./...
+test: test-backend test-frontend
+
+.PHONY: test-backend
+test-backend:
+	@cd backend && go test -cover ./...
+
+.PHONY: test-frontend
+test-frontend:
+	@cd frontend && flutter test
 
 .PHONY: health
 health:

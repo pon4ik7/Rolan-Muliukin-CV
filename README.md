@@ -121,10 +121,21 @@ make down
 ```
 
 ## Validation Commands
-Backend tests:
+Backend tests with coverage:
 ```bash
 cd backend
-go test ./...
+go test -cover ./...
+```
+
+Frontend tests:
+```bash
+cd frontend
+flutter test
+```
+
+Run everything via Makefile:
+```bash
+make test
 ```
 
 Docker checks:
@@ -139,7 +150,8 @@ GitHub Actions workflow is configured in:
 - `.github/workflows/ci.yml`
 
 What runs automatically on `push` and `pull_request`:
-- backend unit tests (`go test ./...`)
+- backend unit tests with coverage (`go test -coverprofile=coverage.out ./...`)
+- frontend tests with coverage (`flutter test --coverage`)
 - docker compose validation (`docker compose config`)
 - backend docker build smoke check (`docker compose build backend`)
 

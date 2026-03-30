@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -50,5 +51,70 @@ func TestStaticRepository_LoadsDataFromJSON(t *testing.T) {
 	achievements, err := repo.GetAchievements(ctx)
 	if err != nil || len(achievements) != 1 {
 		t.Fatalf("unexpected achievements result: err=%v len=%d", err, len(achievements))
+	}
+}
+
+func TestStaticRepository_ReturnsErrorWhenFileDoesNotExist(t *testing.T) {
+	t.Parallel()
+
+	_, err := NewStaticRepository(filepath.Join(t.TempDir(), "missing.json"))
+	if err == nil {
+		t.Fatal("expected error for missing file, got nil")
+	}
+	if !strings.Contains(err.Error(), "read data file") {
+		t.Fatalf("expected read data file error, got %v", err)
+	}
+}
+
+func TestStaticRepository_ReturnsErrorWhenJSONIsInvalid(t *testing.T) {
+	t.Parallel()
+
+	filePath := filepath.Join(t.TempDir(), "resume.json")
+	if err := os.WriteFile(filePath, []byte(`{"profile":`), 0o600); err != nil {
+		t.Fatalf("failed to write invalid fixture: %v", err)
+	}
+
+	_, err := NewStaticRepository(filePath)
+	if err == nil {
+		t.Fatal("expected parse error, got nil")
+	}
+	if !strings.Contains(err.Error(), "parse data file") {
+		t.Fatalf("expected parse data file error, got %v", err)
+	}
+}
+
+func TestStaticRepository_ReturnsSliceCopies(t *testing.T) {
+	t.Parallel()
+
+	data := `{
+		"profile":{"name":"Rolan","role":"Backend Developer","headline":"h","summary":"s","availabilityBadge":"a","careerFocus":"c","contacts":{"phone":"1","email":"2","telegram":"3","location":"4"},"links":{"github":"","leetcode":"","codeforces":"","telegram":"","university":"","cvDownload":"","contactMail":""},"primaryStack":["Go"],"techStack":{"Languages":["Go"]},"education":[],"additionalEducation":[],"softSkills":["Teamwork"]},
+		"projects":[{"id":"p1","name":"Project","role":"Backend","description":"desc","highlights":["h1"],"techStack":["Go"],"repository":"repo"}],
+		"experience":[{"id":"e1","title":"Backend Developer","organization":"Team","period":"2025","description":"desc","highlights":["h1"],"techStack":["Go"]}],
+		"achievements":[{"id":"a1","title":"ICPC","category":"Programming","result":"III","description":"desc","link":"link"}]
+	}`
+
+	filePath := filepath.Join(t.TempDir(), "resume.json")
+	if err := os.WriteFile(filePath, []byte(data), 0o600); err != nil {
+		t.Fatalf("failed to write fixture: %v", err)
+	}
+
+	repo, err := NewStaticRepository(filePath)
+	if err != nil {
+		t.Fatalf("NewStaticRepository returned error: %v", err)
+	}
+
+	ctx := context.Background()
+	projects1, err := repo.GetProjects(ctx)
+	if err != nil {
+		t.Fatalf("GetProjects returned error: %v", err)
+	}
+	projects1[0].Name = "Mutated"
+
+	projects2, err := repo.GetProjects(ctx)
+	if err != nil {
+		t.Fatalf("GetProjects returned error: %v", err)
+	}
+	if projects2[0].Name != "Project" {
+		t.Fatalf("expected repository data to stay immutable, got %q", projects2[0].Name)
 	}
 }
