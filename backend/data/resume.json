@@ -2,16 +2,16 @@
   "profile": {
     "name": "Rolan Muliukin",
     "nameRu": "Ролан Мулюкин",
-    "role": "Backend Developer",
-    "roleRu": "Backend разработчик",
-    "headline": "Backend developer focused on reliable Go services and practical product impact.",
-    "headlineRu": "Backend разработчик, сфокусированный на надежных Go-сервисах и практической ценности для продукта.",
-    "summary": "Backend Developer with hands-on experience building backend logic and REST APIs. Worked with PostgreSQL, Docker, and external service integrations. Participated in team development of educational and project products, focused on server-side request handling and API design. Fast learner with strong interest in practical engineering challenges.",
-    "summaryRu": "Backend разработчик с практическим опытом разработки серверной логики и REST API. Работал с PostgreSQL, Docker и интеграцией внешних сервисов. Участвовал в командной разработке учебных и проектных продуктов, занимался обработкой серверных запросов и проектированием API. Быстро осваиваю новые технологии и люблю практические инженерные задачи.",
-    "availabilityBadge": "Available for internship / junior backend opportunities",
-    "availabilityBadgeRu": "Открыт к стажировкам и junior backend-возможностям",
-    "careerFocus": "Focused on growth in backend development, creating real product value, and solving tasks where software engineering, systems thinking, and continuous learning meet.",
-    "careerFocusRu": "Ориентирован на развитие в backend-разработке, создание реальной ценности для продукта и решение задач на стыке инженерного подхода, системного мышления и постоянного обучения.",
+    "role": "Backend Engineer",
+    "roleRu": "Backend-инженер",
+    "headline": "Backend engineer focused on reliable Go services, REST APIs, and backend architecture for product development.",
+    "headlineRu": "Backend-инженер, сфокусированный на надежных Go-сервисах, REST API и архитектуре backend-систем для продуктовой разработки.",
+    "summary": "Backend engineer focused on building Go services, REST APIs, and server-side architecture for team and personal products. Works with PostgreSQL, Redis, RabbitMQ, Kafka, Docker, and external API integrations. Implements authentication, request-processing pipelines, and data workflows with emphasis on reliability, maintainability, and clear technical ownership.",
+    "summaryRu": "Backend-инженер, разрабатывающий Go-сервисы, REST API и серверную архитектуру для командных и личных продуктов. Работает с PostgreSQL, Redis, RabbitMQ, Kafka, Docker и интеграцией внешних API. Реализует аутентификацию, конвейеры обработки запросов и потоки данных с акцентом на надежность, поддерживаемость и инженерную ответственность.",
+    "availabilityBadge": "Open to Backend Engineer roles",
+    "availabilityBadgeRu": "Открыт к позициям Backend-инженера",
+    "careerFocus": "Focused on backend engineering: API design, reliable service behavior, data modeling, and solving practical product tasks through technical ownership.",
+    "careerFocusRu": "Сфокусирован на backend-разработке: проектировании API, надежной работе сервисов, моделировании данных и решении прикладных продуктовых задач с технической ответственностью.",
     "contacts": {
       "phone": "+7 917 754 05 43",
       "email": "muliukinrolan@mail.ru",
@@ -32,13 +32,13 @@
     },
     "primaryStack": [
       "Go",
+      "REST API",
       "PostgreSQL",
       "Redis",
       "RabbitMQ",
       "Kafka",
       "Docker",
-      "Nginx",
-      "REST API"
+      "Nginx"
     ],
     "techStack": {
       "Programming Languages": [
@@ -48,42 +48,40 @@
         "C#",
         "Python"
       ],
-      "Backend Engineering": [
-        "REST API",
-        "Service Design",
+      "Backend": [
+        "REST API Design",
+        "Service Architecture",
         "Business Logic",
         "External API Integration",
-        "HTTP Request Processing"
+        "HTTP Services",
+        "Concurrency (goroutines, channels, context)"
       ],
-      "Databases and Messaging": [
+      "Databases": [
         "PostgreSQL",
         "SQL",
-        "Redis",
+        "Redis"
+      ],
+      "Messaging & Streaming": [
         "RabbitMQ",
         "Kafka"
       ],
-      "Infrastructure and Systems": [
-        "Git",
+      "Tools / DevOps": [
         "Docker",
         "Docker Compose",
         "Nginx",
+        "Git",
         "Linux",
         "macOS"
       ],
-      "Go Ecosystem": [
-        "goroutines",
-        "channels",
-        "context",
-        "middleware",
-        "net/http"
-      ],
-      "Development and Process": [
+      "Other": [
         "Testing",
         "Logging",
         "Debugging",
-        "Flutter",
+        "Algorithms",
+        "FSM",
         "SDLC",
-        "Scrum"
+        "Scrum",
+        "Flutter"
       ]
     },
     "techStackRu": {
@@ -94,42 +92,40 @@
         "C#",
         "Python"
       ],
-      "Backend-разработка": [
-        "REST API",
-        "Проектирование сервисов",
+      "Backend": [
+        "Проектирование REST API",
+        "Архитектура сервисов",
         "Бизнес-логика",
         "Интеграция внешних API",
-        "Обработка HTTP-запросов"
+        "HTTP-сервисы",
+        "Конкурентность (goroutines, channels, context)"
       ],
-      "Базы данных и брокеры": [
+      "Базы данных": [
         "PostgreSQL",
         "SQL",
-        "Redis",
+        "Redis"
+      ],
+      "Очереди и стриминг": [
         "RabbitMQ",
         "Kafka"
       ],
-      "Инфраструктура и системы": [
-        "Git",
+      "Инструменты / DevOps": [
         "Docker",
         "Docker Compose",
         "Nginx",
+        "Git",
         "Linux",
         "macOS"
       ],
-      "Go-экосистема": [
-        "goroutines",
-        "channels",
-        "context",
-        "middleware",
-        "net/http"
-      ],
-      "Разработка и процесс": [
+      "Другое": [
         "Тестирование",
         "Логирование",
         "Отладка",
-        "Flutter",
+        "Алгоритмы",
+        "FSM",
         "SDLC",
-        "Scrum"
+        "Scrum",
+        "Flutter"
       ]
     },
     "education": [
@@ -141,8 +137,8 @@
         "gpa": "4.86/5.0",
         "period": "2024-2028",
         "periodRu": "2024-2028",
-        "details": "Bachelor track with a backend-focused engineering profile.",
-        "detailsRu": "Трек бакалавриата с инженерным профилем и фокусом на backend."
+        "details": "Bachelor program in Information Systems Engineering with focus on backend systems.",
+        "detailsRu": "Бакалаврская программа по инженерии информационных систем с фокусом на backend-системы."
       }
     ],
     "additionalEducation": [
@@ -154,8 +150,8 @@
         "gpa": "",
         "period": "Ongoing",
         "periodRu": "В процессе",
-        "details": "Regular problem solving on LeetCode and Codeforces.",
-        "detailsRu": "Регулярная практика алгоритмов на LeetCode и Codeforces."
+        "details": "Continuous algorithmic problem solving on LeetCode and Codeforces.",
+        "detailsRu": "Регулярная алгоритмическая практика на LeetCode и Codeforces."
       },
       {
         "institution": "C# Programming Course",
@@ -170,36 +166,36 @@
       }
     ],
     "softSkills": [
-      "Quickly adopts new technologies and tools",
-      "Responsible with deadlines and delivery ownership",
-      "Asks clarifying questions and understands requirements fast",
-      "Works comfortably in teams and welcomes feedback"
+      "Delivery ownership and deadline discipline",
+      "Early requirement clarification and alignment with product goals",
+      "Effective collaboration in team workflows and feedback loops",
+      "Fast adaptation to new codebases, tools, and constraints"
     ],
     "softSkillsRu": [
-      "Быстро осваиваю новые технологии и инструменты",
-      "Ответственно отношусь к срокам и результату",
-      "Задаю уточняющие вопросы и быстро понимаю требования",
-      "Комфортно работаю в команде и открыт к обратной связи"
+      "Ответственность за результат и соблюдение сроков",
+      "Раннее уточнение требований и выравнивание реализации с целями продукта",
+      "Эффективная работа в команде и учет обратной связи",
+      "Быстрая адаптация к новым кодовым базам, инструментам и ограничениям"
     ]
   },
   "experience": [
     {
       "id": "backend-developer-2025",
-      "title": "Backend Developer",
-      "titleRu": "Backend разработчик",
-      "organization": "Project-based team development",
-      "organizationRu": "Командная проектная разработка",
+      "title": "Backend Engineer",
+      "titleRu": "Backend-инженер",
+      "organization": "Team Product Development",
+      "organizationRu": "Командная продуктовая разработка",
       "period": "May 2025 - August 2026",
       "periodRu": "Май 2025 - Август 2026",
-      "description": "Built backend logic and API integrations in Go as part of team products.",
-      "descriptionRu": "Разрабатывал backend-логику и API-интеграции на Go в составе командных проектов.",
+      "description": "Implemented Go backend services and API integrations for team products, focusing on request handling, business logic, and reliable service operation.",
+      "descriptionRu": "Реализовывал Go backend-сервисы и API-интеграции для командных продуктов с фокусом на обработку запросов, бизнес-логику и стабильную работу сервисов.",
       "highlights": [
-        "Developed an AI consultant backend for an online store: API integrations and request processing logic in Go.",
-        "Contributed to the Tatar Shower application: implemented backend APIs and an FSM-based notifications flow."
+        "Built backend components for an AI consultant for online stores, including external API integrations and request-processing pipelines.",
+        "Implemented backend APIs and an FSM-based notification workflow in the Tatar Shower project."
       ],
       "highlightsRu": [
-        "Разработал backend для ИИ-консультанта онлайн-магазина: интеграции API и логику обработки запросов на Go.",
-        "Участвовал в проекте Tatar Shower: реализовал backend API и поток уведомлений на основе FSM."
+        "Реализовал backend-компоненты для ИИ-консультанта онлайн-магазина, включая интеграции внешних API и конвейеры обработки запросов.",
+        "Реализовал backend API и FSM-процесс уведомлений в проекте Tatar Shower."
       ],
       "techStack": [
         "Go",
@@ -215,17 +211,17 @@
       "id": "ai-online-consultant",
       "name": "AI Online Consultant",
       "nameRu": "ИИ-консультант для онлайн-магазина",
-      "role": "Backend Developer",
-      "roleRu": "Backend разработчик",
-      "description": "Team project for online store AI consulting. Implemented backend services in Go including user registration, dialog history storage, request handling, and external API integration.",
-      "descriptionRu": "Командный проект по разработке ИИ-консультанта для онлайн-магазинов. Реализовал backend-часть на Go: регистрацию пользователей, хранение истории диалогов, обработку запросов и интеграцию с внешним API.",
+      "role": "Backend Engineer",
+      "roleRu": "Backend-инженер",
+      "description": "Team project for AI consulting in online stores. Implemented Go backend services for user registration, dialog history storage, request processing, and external API integration.",
+      "descriptionRu": "Командный проект по созданию ИИ-консультанта для онлайн-магазинов. Реализовал Go backend-сервисы для регистрации пользователей, хранения истории диалогов, обработки запросов и интеграции внешних API.",
       "highlights": [
-        "Designed and built core backend modules for user flows and conversation processing.",
-        "Integrated external APIs and ensured stable request handling."
+        "Designed and implemented backend modules for user flows and conversation processing.",
+        "Integrated external APIs and implemented reliable request handling across service endpoints."
       ],
       "highlightsRu": [
-        "Спроектировал и реализовал ключевые backend-модули для пользовательских сценариев и обработки диалогов.",
-        "Интегрировал внешние API и обеспечил стабильную обработку запросов."
+        "Спроектировал и реализовал backend-модули для пользовательских сценариев и обработки диалогов.",
+        "Интегрировал внешние API и реализовал надежную обработку запросов в сервисных эндпоинтах."
       ],
       "techStack": [
         "Go",
@@ -239,17 +235,17 @@
       "id": "room-booking-service",
       "name": "Room Booking Service",
       "nameRu": "Сервис бронирования переговорных",
-      "role": "Backend Developer",
-      "roleRu": "Backend разработчик",
-      "description": "Developed a backend service for meeting room booking with authentication, role model, room and schedule management, slot generation, and booking lifecycle operations.",
-      "descriptionRu": "Разработал backend-сервис для бронирования переговорных: аутентификация, ролевая модель, управление переговорками и расписанием, генерация слотов и полный цикл бронирования.",
+      "role": "Backend Engineer",
+      "roleRu": "Backend-инженер",
+      "description": "Built a Go backend service for meeting room booking with authentication, role-based access control, room and schedule management, slot generation, and booking lifecycle operations.",
+      "descriptionRu": "Разработал Go backend-сервис для бронирования переговорных: аутентификация, ролевая модель доступа, управление переговорками и расписанием, генерация слотов и полный цикл бронирования.",
       "highlights": [
-        "Implemented JWT authentication and role-based access model (admin/user).",
-        "Added Swagger docs, Docker Compose setup, and unit/integration tests for business flows."
+        "Implemented JWT authentication and role-based access control (admin/user).",
+        "Added Swagger documentation, Docker Compose environment, and unit/integration tests for booking scenarios."
       ],
       "highlightsRu": [
-        "Реализовал JWT-аутентификацию и ролевую модель доступа (admin/user).",
-        "Добавил Swagger-документацию, Docker Compose и покрытие бизнес-сценариев unit/integration тестами."
+        "Реализовал JWT-аутентификацию и RBAC-модель доступа (admin/user).",
+        "Добавил Swagger-документацию, Docker Compose-окружение и unit/integration-тесты для сценариев бронирования."
       ],
       "techStack": [
         "Go",
@@ -265,17 +261,17 @@
       "id": "tatar-shower",
       "name": "Tatar Shower",
       "nameRu": "Tatar Shower",
-      "role": "Backend Developer",
-      "roleRu": "Backend разработчик",
-      "description": "Mobile wellness application helping users build healthy hardening habits. Implemented backend services including user registration, data processing, and API integrations.",
-      "descriptionRu": "Мобильное приложение для формирования здоровых привычек и закаливания. Реализовал backend-часть: регистрацию пользователей, обработку данных и интеграцию API.",
+      "role": "Backend Engineer",
+      "roleRu": "Backend-инженер",
+      "description": "Mobile wellness application focused on healthy habit formation. Implemented backend services for user registration, data processing, and API integrations.",
+      "descriptionRu": "Мобильное приложение для формирования полезных привычек. Реализовал backend-сервисы для регистрации пользователей, обработки данных и API-интеграций.",
       "highlights": [
-        "Built core backend endpoints and request processing flows.",
-        "Delivered backend support for app logic and integrations."
+        "Implemented core backend endpoints and request-processing flows.",
+        "Built an FSM-based notification flow and backend integration layer for app logic."
       ],
       "highlightsRu": [
-        "Реализовал ключевые backend-endpoint'ы и потоки обработки запросов.",
-        "Обеспечил backend-поддержку логики приложения и интеграций."
+        "Реализовал ключевые backend-эндпоинты и потоки обработки запросов.",
+        "Построил FSM-процесс уведомлений и backend-слой интеграций для логики приложения."
       ],
       "techStack": [
         "Go",
@@ -289,17 +285,17 @@
       "id": "messenger",
       "name": "Messenger",
       "nameRu": "Мессенджер",
-      "role": "Backend Developer",
-      "roleRu": "Backend разработчик",
-      "description": "Personal messenger project built from scratch. Focused on architecture design, core logic implementation, and stable interaction between system components.",
-      "descriptionRu": "Собственный проект мессенджера с нуля. Сфокусирован на проектировании архитектуры, реализации основной логики и стабильном взаимодействии компонентов системы.",
+      "role": "Backend Engineer",
+      "roleRu": "Backend-инженер",
+      "description": "Personal messenger backend project built from scratch, focused on service architecture, core logic, and reliable interaction between system components.",
+      "descriptionRu": "Личный backend-проект мессенджера, разработанный с нуля, с фокусом на архитектуру сервисов, основную логику и надежное взаимодействие компонентов системы.",
       "highlights": [
-        "Designed the project structure and backend architecture.",
-        "Focused on data processing reliability and maintainable service behavior."
+        "Designed service structure and backend architecture.",
+        "Implemented data-processing flows with emphasis on reliability and maintainability."
       ],
       "highlightsRu": [
-        "Спроектировал структуру проекта и backend-архитектуру.",
-        "Сфокусировался на надежной обработке данных и поддерживаемом поведении сервиса."
+        "Спроектировал структуру сервиса и backend-архитектуру с нуля.",
+        "Реализовал потоки обработки данных с акцентом на надежность и поддерживаемость."
       ],
       "techStack": [
         "Go",
@@ -315,8 +311,8 @@
       "nameRu": "GameDev-проект: Casual PC Game",
       "role": "C# / Unity Developer",
       "roleRu": "C# / Unity разработчик",
-      "description": "Built a prototype and implemented interactions between the character and game world, including UI and visual effects.",
-      "descriptionRu": "Сделал прототип игры и реализовал взаимодействие между персонажем и игровым миром, включая UI и визуальные эффекты.",
+      "description": "Built a playable Unity prototype and implemented interactions between the character and game world, including UI and visual effects.",
+      "descriptionRu": "Собрал игровой прототип на Unity и реализовал взаимодействие между персонажем и игровым миром, включая UI и визуальные эффекты.",
       "highlights": [
         "Implemented character-world interaction mechanics.",
         "Developed game UI and visual effect behavior."
@@ -341,7 +337,7 @@
       "categoryRu": "Программирование",
       "result": "III degree diploma",
       "resultRu": "Диплом III степени",
-      "description": "International collegiate programming competition achievement.",
+      "description": "Achievement in an international collegiate programming competition.",
       "descriptionRu": "Достижение в международном студенческом соревновании по программированию.",
       "link": "https://disk.yandex.ru/i/22P34rYZPhVH5w"
     },

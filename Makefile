@@ -33,7 +33,7 @@ down:
 	@$(COMPOSE) down
 
 .PHONY: restart
-restart: down up
+restart: down up-build
 
 .PHONY: ps
 ps:

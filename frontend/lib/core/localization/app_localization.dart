@@ -43,20 +43,20 @@ class AppLocalization {
   String get techStackTitle => isRussian ? 'Технологии' : 'Tech Stack';
 
   String get techStackSubtitle => isRussian
-      ? 'Инструменты, которые я использую в backend'
-      : 'Tools I Use To Build Backends';
+      ? 'Ключевые backend-технологии и инструменты'
+      : 'Core backend technologies and tools';
 
   String get experienceTitle => isRussian ? 'Опыт' : 'Experience';
 
   String get experienceSubtitle => isRussian
-      ? 'Командная работа над продуктами'
-      : 'Production-Oriented Team Work';
+      ? 'Командная продуктовая разработка'
+      : 'Team Product Development';
 
   String get projectsTitle => isRussian ? 'Проекты' : 'Projects';
 
   String get projectsSubtitle => isRussian
       ? 'Backend-системы, которые я разработал'
-      : 'Backend Systems I Built';
+      : 'Selected Backend Projects';
 
   String get educationTitle => isRussian ? 'Образование' : 'Education';
 
@@ -89,10 +89,10 @@ class AppLocalization {
       : "Let's Build Great Backend Products";
 
   String get contactIntro => isRussian
-      ? 'Открыт к стажировкам и junior backend-позициям. '
-            'Если вы ищете Go/backend разработчика, буду рад связаться.'
-      : 'Open to internship and junior backend opportunities. '
-            'If you are hiring for Go or backend roles, feel free to reach out.';
+      ? 'Открыт к позициям Backend-инженера. '
+            'Если вы ищете Go/backend специалиста, буду рад связаться.'
+      : 'Open to Backend Engineer roles. '
+            'If you are hiring for Go/backend positions, feel free to reach out.';
 
   String get copyEmail => isRussian ? 'Скопировать Email' : 'Copy Email';
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rolan-muliukin-cv.vercel.app/sitemap.xml

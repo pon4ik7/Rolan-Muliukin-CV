@@ -5,7 +5,7 @@ Production-like personal portfolio and resume website for **Rolan Muliukin (Back
 - **Backend:** Go (chi + net/http)
 - **Infra:** Docker, Docker Compose, Nginx reverse proxy
 
-The project is designed to look and feel like a polished junior/intern backend portfolio while keeping code maintainable for further growth (contact form, admin panel, analytics, database migration).
+The project is designed as a polished backend portfolio while keeping code maintainable for further growth (contact form, admin panel, analytics, database migration).
 
 ## Why Single-Page
 This project uses a **single-page structure** with smooth in-page navigation because:
@@ -168,7 +168,7 @@ Typical updates:
 Frontend consumes backend API dynamically, so no UI hardcode changes are needed for text updates.
 
 ## Deployment Notes
-Current setup is deployment-ready with minor production hardening:
+Current setup is close to deployment-ready and needs minor production hardening:
 - set real domain and HTTPS termination (Nginx + certbot or cloud LB)
 - move resume data to PostgreSQL
 - add contact form endpoint and anti-spam checks
