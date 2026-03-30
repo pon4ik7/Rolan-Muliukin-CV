@@ -1,18 +1,23 @@
 {
   "profile": {
     "name": "Rolan Muliukin",
+    "nameRu": "Ролан Мулюкин",
     "role": "Backend Developer",
+    "roleRu": "Backend разработчик",
     "headline": "Backend developer focused on reliable Go services and practical product impact.",
+    "headlineRu": "Backend разработчик, сфокусированный на надежных Go-сервисах и практической ценности для продукта.",
     "summary": "Backend Developer with hands-on experience building backend logic and REST APIs. Worked with PostgreSQL, Docker, and external service integrations. Participated in team development of educational and project products, focused on server-side request handling and API design. Fast learner with strong interest in practical engineering challenges.",
     "summaryRu": "Backend разработчик с практическим опытом разработки серверной логики и REST API. Работал с PostgreSQL, Docker и интеграцией внешних сервисов. Участвовал в командной разработке учебных и проектных продуктов, занимался обработкой серверных запросов и проектированием API. Быстро осваиваю новые технологии и люблю практические инженерные задачи.",
     "availabilityBadge": "Available for internship / junior backend opportunities",
+    "availabilityBadgeRu": "Открыт к стажировкам и junior backend-возможностям",
     "careerFocus": "Focused on growth in backend development, creating real product value, and solving tasks where software engineering, systems thinking, and continuous learning meet.",
     "careerFocusRu": "Ориентирован на развитие в backend-разработке, создание реальной ценности для продукта и решение задач на стыке инженерного подхода, системного мышления и постоянного обучения.",
     "contacts": {
       "phone": "+7 917 754 05 43",
       "email": "muliukinrolan@mail.ru",
       "telegram": "@poon4ik7",
-      "location": "Innopolis, Russia"
+      "location": "Innopolis, Russia",
+      "locationRu": "Иннополис, Россия"
     },
     "links": {
       "github": "https://github.com/pon4ik7",
@@ -81,29 +86,87 @@
         "Scrum"
       ]
     },
+    "techStackRu": {
+      "Языки программирования": [
+        "Go",
+        "Java",
+        "C++",
+        "C#",
+        "Python"
+      ],
+      "Backend-разработка": [
+        "REST API",
+        "Проектирование сервисов",
+        "Бизнес-логика",
+        "Интеграция внешних API",
+        "Обработка HTTP-запросов"
+      ],
+      "Базы данных и брокеры": [
+        "PostgreSQL",
+        "SQL",
+        "Redis",
+        "RabbitMQ",
+        "Kafka"
+      ],
+      "Инфраструктура и системы": [
+        "Git",
+        "Docker",
+        "Docker Compose",
+        "Nginx",
+        "Linux",
+        "macOS"
+      ],
+      "Go-экосистема": [
+        "goroutines",
+        "channels",
+        "context",
+        "middleware",
+        "net/http"
+      ],
+      "Разработка и процесс": [
+        "Тестирование",
+        "Логирование",
+        "Отладка",
+        "Flutter",
+        "SDLC",
+        "Scrum"
+      ]
+    },
     "education": [
       {
         "institution": "Innopolis University",
+        "institutionRu": "Университет Иннополис",
         "program": "Information Systems Engineering",
+        "programRu": "Инженерия информационных систем",
         "gpa": "4.86/5.0",
         "period": "2024-2028",
-        "details": "Bachelor track with a backend-focused engineering profile."
+        "periodRu": "2024-2028",
+        "details": "Bachelor track with a backend-focused engineering profile.",
+        "detailsRu": "Трек бакалавриата с инженерным профилем и фокусом на backend."
       }
     ],
     "additionalEducation": [
       {
         "institution": "Algorithmic Practice",
+        "institutionRu": "Алгоритмическая практика",
         "program": "Go, Java, C++ problem solving",
+        "programRu": "Решение задач на Go, Java и C++",
         "gpa": "",
         "period": "Ongoing",
-        "details": "Regular problem solving on LeetCode and Codeforces."
+        "periodRu": "В процессе",
+        "details": "Regular problem solving on LeetCode and Codeforces.",
+        "detailsRu": "Регулярная практика алгоритмов на LeetCode и Codeforces."
       },
       {
         "institution": "C# Programming Course",
+        "institutionRu": "Курс по программированию на C#",
         "program": "From fundamentals to mobile and PC game development in Unity",
+        "programRu": "От основ до разработки мобильных и ПК-игр на Unity",
         "gpa": "",
         "period": "Completed",
-        "details": "147 academic hours."
+        "periodRu": "Завершено",
+        "details": "147 academic hours.",
+        "detailsRu": "147 академических часов."
       }
     ],
     "softSkills": [
@@ -111,18 +174,32 @@
       "Responsible with deadlines and delivery ownership",
       "Asks clarifying questions and understands requirements fast",
       "Works comfortably in teams and welcomes feedback"
+    ],
+    "softSkillsRu": [
+      "Быстро осваиваю новые технологии и инструменты",
+      "Ответственно отношусь к срокам и результату",
+      "Задаю уточняющие вопросы и быстро понимаю требования",
+      "Комфортно работаю в команде и открыт к обратной связи"
     ]
   },
   "experience": [
     {
       "id": "backend-developer-2025",
       "title": "Backend Developer",
+      "titleRu": "Backend разработчик",
       "organization": "Project-based team development",
+      "organizationRu": "Командная проектная разработка",
       "period": "May 2025 - August 2026",
+      "periodRu": "Май 2025 - Август 2026",
       "description": "Built backend logic and API integrations in Go as part of team products.",
+      "descriptionRu": "Разрабатывал backend-логику и API-интеграции на Go в составе командных проектов.",
       "highlights": [
         "Developed an AI consultant backend for an online store: API integrations and request processing logic in Go.",
         "Contributed to the Tatar Shower application: implemented backend APIs and an FSM-based notifications flow."
+      ],
+      "highlightsRu": [
+        "Разработал backend для ИИ-консультанта онлайн-магазина: интеграции API и логику обработки запросов на Go.",
+        "Участвовал в проекте Tatar Shower: реализовал backend API и поток уведомлений на основе FSM."
       ],
       "techStack": [
         "Go",
@@ -137,6 +214,7 @@
     {
       "id": "ai-online-consultant",
       "name": "AI Online Consultant",
+      "nameRu": "ИИ-консультант для онлайн-магазина",
       "role": "Backend Developer",
       "roleRu": "Backend разработчик",
       "description": "Team project for online store AI consulting. Implemented backend services in Go including user registration, dialog history storage, request handling, and external API integration.",
@@ -160,6 +238,7 @@
     {
       "id": "room-booking-service",
       "name": "Room Booking Service",
+      "nameRu": "Сервис бронирования переговорных",
       "role": "Backend Developer",
       "roleRu": "Backend разработчик",
       "description": "Developed a backend service for meeting room booking with authentication, role model, room and schedule management, slot generation, and booking lifecycle operations.",
@@ -185,6 +264,7 @@
     {
       "id": "tatar-shower",
       "name": "Tatar Shower",
+      "nameRu": "Tatar Shower",
       "role": "Backend Developer",
       "roleRu": "Backend разработчик",
       "description": "Mobile wellness application helping users build healthy hardening habits. Implemented backend services including user registration, data processing, and API integrations.",
@@ -208,6 +288,7 @@
     {
       "id": "messenger",
       "name": "Messenger",
+      "nameRu": "Мессенджер",
       "role": "Backend Developer",
       "roleRu": "Backend разработчик",
       "description": "Personal messenger project built from scratch. Focused on architecture design, core logic implementation, and stable interaction between system components.",
@@ -231,6 +312,7 @@
     {
       "id": "casual-pc-game",
       "name": "GameDev Project: Casual PC Game",
+      "nameRu": "GameDev-проект: Casual PC Game",
       "role": "C# / Unity Developer",
       "roleRu": "C# / Unity разработчик",
       "description": "Built a prototype and implemented interactions between the character and game world, including UI and visual effects.",
@@ -254,41 +336,61 @@
     {
       "id": "icpc-regional",
       "title": "ICPC Southern and Volga Russia Regional Contest Qualification Stage",
+      "titleRu": "Отборочный этап регионального соревнования ICPC (Юг и Поволжье России)",
       "category": "Programming Competitions",
+      "categoryRu": "Программирование",
       "result": "III degree diploma",
+      "resultRu": "Диплом III степени",
       "description": "International collegiate programming competition achievement.",
+      "descriptionRu": "Достижение в международном студенческом соревновании по программированию.",
       "link": "https://disk.yandex.ru/i/22P34rYZPhVH5w"
     },
     {
       "id": "rosatom-olympiad",
       "title": "Rosatom Industry Physics and Mathematics Olympiad (RSOS Level 1)",
+      "titleRu": "Отраслевая физико-математическая олимпиада Росатома (РСОШ, 1 уровень)",
       "category": "Olympiads",
+      "categoryRu": "Олимпиады",
       "result": "Prize winner, III degree diploma (Physics)",
+      "resultRu": "Призер, диплом III степени (физика)",
       "description": "Awarded in a high-level industry olympiad track.",
+      "descriptionRu": "Награжден в рамках профильной олимпиады высокого уровня.",
       "link": "https://disk.yandex.ru/i/oA3gZdcOsf_AUA"
     },
     {
       "id": "engineering-olympiad",
       "title": "Engineering School Olympiad (RSOS Level 2)",
+      "titleRu": "Инженерная школьная олимпиада (РСОШ, 2 уровень)",
       "category": "Olympiads",
+      "categoryRu": "Олимпиады",
       "result": "Prize winner, II degree diploma (Physics)",
+      "resultRu": "Призер, диплом II степени (физика)",
       "description": "Recognized for strong engineering and physics performance.",
+      "descriptionRu": "Отмечен за сильные результаты в инженерных и физико-математических задачах.",
       "link": "https://disk.yandex.ru/i/B8-YWqR3q-Q9AA"
     },
     {
       "id": "future-step-olympiad",
       "title": "Step into the Future School Olympiad (RSOS Level 2)",
+      "titleRu": "Олимпиада школьников «Шаг в будущее» (РСОШ, 2 уровень)",
       "category": "Olympiads",
+      "categoryRu": "Олимпиады",
       "result": "Prize winner, II degree diploma (Physics)",
+      "resultRu": "Призер, диплом II степени (физика)",
       "description": "Achieved strong results in national-level olympiad competition.",
+      "descriptionRu": "Показал сильный результат в олимпиадном соревновании национального уровня.",
       "link": "https://disk.yandex.ru/i/I1m8lKZzLe-Hvg"
     },
     {
       "id": "economics-olympiad",
       "title": "All-Russian School Olympiad in Economics",
+      "titleRu": "Всероссийская олимпиада школьников по экономике",
       "category": "Olympiads",
+      "categoryRu": "Олимпиады",
       "result": "Regional stage prize winner",
+      "resultRu": "Призер регионального этапа",
       "description": "Regional award in economics olympiad.",
+      "descriptionRu": "Награда на региональном этапе олимпиады по экономике.",
       "link": ""
     }
   ]

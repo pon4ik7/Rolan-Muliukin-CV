@@ -28,6 +28,17 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isCompact = MediaQuery.of(context).size.width < 900;
+    final availabilityBadge =
+        i18n.isRussian && profile.availabilityBadgeRu.isNotEmpty
+        ? profile.availabilityBadgeRu
+        : profile.availabilityBadge;
+    final displayName =
+        i18n.isRussian && profile.nameRu.isNotEmpty ? profile.nameRu : profile.name;
+    final role =
+        i18n.isRussian && profile.roleRu.isNotEmpty ? profile.roleRu : profile.role;
+    final headline = i18n.isRussian && profile.headlineRu.isNotEmpty
+        ? profile.headlineRu
+        : profile.headline;
 
     return AnimatedReveal(
       child: Container(
@@ -60,7 +71,7 @@ class HeroSection extends StatelessWidget {
                 border: Border.all(color: AppPalette.success.withOpacity(0.5)),
               ),
               child: Text(
-                profile.availabilityBadge,
+                availabilityBadge,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppPalette.success,
                   fontWeight: FontWeight.w700,
@@ -69,7 +80,7 @@ class HeroSection extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              profile.name,
+              displayName,
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                 fontSize: isCompact ? 42 : 62,
                 height: 1,
@@ -77,7 +88,7 @@ class HeroSection extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              profile.role,
+              role,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontSize: isCompact ? 24 : 30,
                 color: AppPalette.secondary,
@@ -87,7 +98,7 @@ class HeroSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 760),
               child: Text(
-                profile.headline,
+                headline,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: AppPalette.textSecondary,
                 ),

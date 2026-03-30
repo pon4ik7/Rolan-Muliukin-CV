@@ -27,6 +27,8 @@ class AppNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isCompact = MediaQuery.of(context).size.width < 980;
     final navItems = i18n.navItems;
+    final displayName =
+        i18n.isRussian && profile.nameRu.isNotEmpty ? profile.nameRu : profile.name;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -41,7 +43,7 @@ class AppNavBar extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    profile.name,
+                    displayName,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontSize: 18,
                     ),
@@ -75,7 +77,7 @@ class AppNavBar extends StatelessWidget {
           : Row(
               children: [
                 Text(
-                  profile.name,
+                  displayName,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontSize: 18,
                   ),

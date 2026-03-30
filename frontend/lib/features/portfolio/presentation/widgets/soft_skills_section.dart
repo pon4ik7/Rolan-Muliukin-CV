@@ -13,6 +13,10 @@ class SoftSkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final skills = i18n.isRussian && profile.softSkillsRu.isNotEmpty
+        ? profile.softSkillsRu
+        : profile.softSkills;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -23,7 +27,7 @@ class SoftSkillsSection extends StatelessWidget {
         const SizedBox(height: 20),
         GlassCard(
           child: Column(
-            children: profile.softSkills
+            children: skills
                 .map(
                   (item) => ListTile(
                     contentPadding: EdgeInsets.zero,

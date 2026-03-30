@@ -2,6 +2,7 @@ class ProjectModel {
   ProjectModel({
     required this.id,
     required this.name,
+    required this.nameRu,
     required this.role,
     required this.roleRu,
     required this.description,
@@ -14,6 +15,7 @@ class ProjectModel {
 
   final String id;
   final String name;
+  final String nameRu;
   final String role;
   final String roleRu;
   final String description;
@@ -27,6 +29,7 @@ class ProjectModel {
     return ProjectModel(
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
+      nameRu: json['nameRu'] as String? ?? '',
       role: json['role'] as String? ?? '',
       roleRu: json['roleRu'] as String? ?? '',
       description: json['description'] as String? ?? '',

@@ -30,6 +30,9 @@ class ProjectsSection extends StatelessWidget {
           children: items
               .map(
                 (item) {
+                  final name = i18n.isRussian && item.nameRu.isNotEmpty
+                      ? item.nameRu
+                      : item.name;
                   final role = i18n.isRussian && item.roleRu.isNotEmpty
                       ? item.roleRu
                       : item.role;
@@ -54,7 +57,7 @@ class ProjectsSection extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      item.name,
+                                      name,
                                       style: Theme.of(context).textTheme.titleLarge
                                           ?.copyWith(fontSize: 22),
                                     ),

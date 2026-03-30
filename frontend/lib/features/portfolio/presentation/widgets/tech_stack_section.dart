@@ -14,7 +14,10 @@ class TechStackSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final entries = profile.techStack.entries.toList();
+    final stack = i18n.isRussian && profile.techStackRu.isNotEmpty
+        ? profile.techStackRu
+        : profile.techStack;
+    final entries = stack.entries.toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

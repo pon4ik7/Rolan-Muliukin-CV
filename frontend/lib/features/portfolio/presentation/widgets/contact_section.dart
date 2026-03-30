@@ -24,6 +24,10 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final location = i18n.isRussian && profile.contacts.locationRu.isNotEmpty
+        ? profile.contacts.locationRu
+        : profile.contacts.location;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -85,7 +89,7 @@ class ContactSection extends StatelessWidget {
                   _MetaChip(icon: Icons.phone_outlined, text: profile.contacts.phone),
                   _MetaChip(
                     icon: Icons.location_on_outlined,
-                    text: profile.contacts.location,
+                    text: location,
                   ),
                 ],
               ),

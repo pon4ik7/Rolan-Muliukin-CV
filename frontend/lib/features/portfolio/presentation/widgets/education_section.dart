@@ -27,34 +27,64 @@ class EducationSection extends StatelessWidget {
           runSpacing: 16,
           children: [
             ...profile.education.map(
-              (item) => SizedBox(
-                width: 560,
-                child: GlassCard(
-                  child: _EducationCard(
-                    title: item.institution,
-                    subtitle: item.program,
-                    period: item.period,
-                    details: item.details,
-                    gpa: item.gpa,
-                    gpaPrefix: i18n.gpaPrefix,
+              (item) {
+                final title = i18n.isRussian && item.institutionRu.isNotEmpty
+                    ? item.institutionRu
+                    : item.institution;
+                final subtitle = i18n.isRussian && item.programRu.isNotEmpty
+                    ? item.programRu
+                    : item.program;
+                final details = i18n.isRussian && item.detailsRu.isNotEmpty
+                    ? item.detailsRu
+                    : item.details;
+                final period = i18n.isRussian && item.periodRu.isNotEmpty
+                    ? item.periodRu
+                    : item.period;
+
+                return SizedBox(
+                  width: 560,
+                  child: GlassCard(
+                    child: _EducationCard(
+                      title: title,
+                      subtitle: subtitle,
+                      period: period,
+                      details: details,
+                      gpa: item.gpa,
+                      gpaPrefix: i18n.gpaPrefix,
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
             ...profile.additionalEducation.map(
-              (item) => SizedBox(
-                width: 560,
-                child: GlassCard(
-                  child: _EducationCard(
-                    title: item.institution,
-                    subtitle: item.program,
-                    period: item.period,
-                    details: item.details,
-                    gpa: item.gpa,
-                    gpaPrefix: i18n.gpaPrefix,
+              (item) {
+                final title = i18n.isRussian && item.institutionRu.isNotEmpty
+                    ? item.institutionRu
+                    : item.institution;
+                final subtitle = i18n.isRussian && item.programRu.isNotEmpty
+                    ? item.programRu
+                    : item.program;
+                final details = i18n.isRussian && item.detailsRu.isNotEmpty
+                    ? item.detailsRu
+                    : item.details;
+                final period = i18n.isRussian && item.periodRu.isNotEmpty
+                    ? item.periodRu
+                    : item.period;
+
+                return SizedBox(
+                  width: 560,
+                  child: GlassCard(
+                    child: _EducationCard(
+                      title: title,
+                      subtitle: subtitle,
+                      period: period,
+                      details: details,
+                      gpa: item.gpa,
+                      gpaPrefix: i18n.gpaPrefix,
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ),

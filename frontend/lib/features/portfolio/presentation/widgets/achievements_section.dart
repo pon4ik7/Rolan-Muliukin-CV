@@ -24,56 +24,72 @@ class AchievementsSection extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         ...items.map(
-          (item) => Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: GlassCard(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 42,
-                    height: 42,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      gradient: const LinearGradient(
-                        colors: [AppPalette.primary, AppPalette.secondary],
+          (item) {
+            final title = i18n.isRussian && item.titleRu.isNotEmpty
+                ? item.titleRu
+                : item.title;
+            final category = i18n.isRussian && item.categoryRu.isNotEmpty
+                ? item.categoryRu
+                : item.category;
+            final result = i18n.isRussian && item.resultRu.isNotEmpty
+                ? item.resultRu
+                : item.result;
+            final description =
+                i18n.isRussian && item.descriptionRu.isNotEmpty
+                ? item.descriptionRu
+                : item.description;
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: GlassCard(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 42,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        gradient: const LinearGradient(
+                          colors: [AppPalette.primary, AppPalette.secondary],
+                        ),
+                      ),
+                      child: const Icon(Icons.emoji_events_outlined),
+                    ),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontSize: 20,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '$category - $result',
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppPalette.secondary,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(description),
+                        ],
                       ),
                     ),
-                    child: const Icon(Icons.emoji_events_outlined),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          item.title,
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontSize: 20,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${item.category} - ${item.result}',
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: AppPalette.secondary,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(item.description),
-                      ],
-                    ),
-                  ),
-                  if (item.link.isNotEmpty)
-                    IconButton(
-                      onPressed: () => launchExternalLink(item.link),
-                      tooltip: i18n.openCertificate,
-                      icon: const Icon(Icons.open_in_new),
-                    ),
-                ],
+                    if (item.link.isNotEmpty)
+                      IconButton(
+                        onPressed: () => launchExternalLink(item.link),
+                        tooltip: i18n.openCertificate,
+                        icon: const Icon(Icons.open_in_new),
+                      ),
+                  ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ],
     );

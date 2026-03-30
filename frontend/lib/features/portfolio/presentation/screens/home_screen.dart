@@ -143,6 +143,10 @@ class _HomeScreenState extends State<HomeScreen> {
       case PortfolioStatus.ready:
         final bundle = _controller.bundle!;
         final cvSelection = _resolveCvSelection(bundle.profile.links);
+        final footerName =
+            i18n.isRussian && bundle.profile.nameRu.isNotEmpty
+            ? bundle.profile.nameRu
+            : bundle.profile.name;
 
         return Scaffold(
           body: Stack(
@@ -263,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       : null,
                                 ),
                               ),
-                              AppFooter(name: bundle.profile.name, i18n: i18n),
+                              AppFooter(name: footerName, i18n: i18n),
                             ],
                           ),
                         ),
