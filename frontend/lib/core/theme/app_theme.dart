@@ -81,7 +81,7 @@ class AppTheme {
         error: AppPalette.danger,
       ),
       textTheme: textTheme,
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppPalette.surface,
         shadowColor: AppPalette.primary.withOpacity(0.08),
         elevation: 0,
