@@ -7,7 +7,11 @@ import 'section_title.dart';
 import 'skill_chip.dart';
 
 class TechStackSection extends StatelessWidget {
-  const TechStackSection({required this.profile, required this.i18n, super.key});
+  const TechStackSection({
+    required this.profile,
+    required this.i18n,
+    super.key,
+  });
 
   final ProfileModel profile;
   final AppLocalization i18n;
@@ -27,37 +31,46 @@ class TechStackSection extends StatelessWidget {
           subtitle: i18n.techStackSubtitle,
         ),
         const SizedBox(height: 20),
-        Wrap(
-          spacing: 16,
-          runSpacing: 16,
-          children: entries
-              .map(
-                (entry) => SizedBox(
-                  width: 360,
-                  child: GlassCard(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          entry.key,
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontSize: 20,
-                          ),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final wide = constraints.maxWidth >= 900;
+            final cardWidth = wide
+                ? (constraints.maxWidth - 32) / 3
+                : constraints.maxWidth;
+
+            return Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              children: entries
+                  .map(
+                    (entry) => SizedBox(
+                      width: cardWidth,
+                      child: GlassCard(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              entry.key,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleLarge?.copyWith(fontSize: 20),
+                            ),
+                            const SizedBox(height: 14),
+                            Wrap(
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: entry.value
+                                  .map((skill) => SkillChip(label: skill))
+                                  .toList(),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 14),
-                        Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children: entry.value
-                              .map((skill) => SkillChip(label: skill))
-                              .toList(),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-              )
-              .toList(),
+                  )
+                  .toList(),
+            );
+          },
         ),
       ],
     );

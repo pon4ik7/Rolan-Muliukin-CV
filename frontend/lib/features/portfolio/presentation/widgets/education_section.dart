@@ -7,7 +7,11 @@ import 'glass_card.dart';
 import 'section_title.dart';
 
 class EducationSection extends StatelessWidget {
-  const EducationSection({required this.profile, required this.i18n, super.key});
+  const EducationSection({
+    required this.profile,
+    required this.i18n,
+    super.key,
+  });
 
   final ProfileModel profile;
   final AppLocalization i18n;
@@ -22,71 +26,76 @@ class EducationSection extends StatelessWidget {
           subtitle: i18n.educationSubtitle,
         ),
         const SizedBox(height: 20),
-        Wrap(
-          spacing: 16,
-          runSpacing: 16,
-          children: [
-            ...profile.education.map(
-              (item) {
-                final title = i18n.isRussian && item.institutionRu.isNotEmpty
-                    ? item.institutionRu
-                    : item.institution;
-                final subtitle = i18n.isRussian && item.programRu.isNotEmpty
-                    ? item.programRu
-                    : item.program;
-                final details = i18n.isRussian && item.detailsRu.isNotEmpty
-                    ? item.detailsRu
-                    : item.details;
-                final period = i18n.isRussian && item.periodRu.isNotEmpty
-                    ? item.periodRu
-                    : item.period;
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final twoColumns = constraints.maxWidth >= 980;
+            final cardWidth = twoColumns
+                ? (constraints.maxWidth - 16) / 2
+                : constraints.maxWidth;
 
-                return SizedBox(
-                  width: 560,
-                  child: GlassCard(
-                    child: _EducationCard(
-                      title: title,
-                      subtitle: subtitle,
-                      period: period,
-                      details: details,
-                      gpa: item.gpa,
-                      gpaPrefix: i18n.gpaPrefix,
-                    ),
-                  ),
-                );
-              },
-            ),
-            ...profile.additionalEducation.map(
-              (item) {
-                final title = i18n.isRussian && item.institutionRu.isNotEmpty
-                    ? item.institutionRu
-                    : item.institution;
-                final subtitle = i18n.isRussian && item.programRu.isNotEmpty
-                    ? item.programRu
-                    : item.program;
-                final details = i18n.isRussian && item.detailsRu.isNotEmpty
-                    ? item.detailsRu
-                    : item.details;
-                final period = i18n.isRussian && item.periodRu.isNotEmpty
-                    ? item.periodRu
-                    : item.period;
+            return Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              children: [
+                ...profile.education.map((item) {
+                  final title = i18n.isRussian && item.institutionRu.isNotEmpty
+                      ? item.institutionRu
+                      : item.institution;
+                  final subtitle = i18n.isRussian && item.programRu.isNotEmpty
+                      ? item.programRu
+                      : item.program;
+                  final details = i18n.isRussian && item.detailsRu.isNotEmpty
+                      ? item.detailsRu
+                      : item.details;
+                  final period = i18n.isRussian && item.periodRu.isNotEmpty
+                      ? item.periodRu
+                      : item.period;
 
-                return SizedBox(
-                  width: 560,
-                  child: GlassCard(
-                    child: _EducationCard(
-                      title: title,
-                      subtitle: subtitle,
-                      period: period,
-                      details: details,
-                      gpa: item.gpa,
-                      gpaPrefix: i18n.gpaPrefix,
+                  return SizedBox(
+                    width: cardWidth,
+                    child: GlassCard(
+                      child: _EducationCard(
+                        title: title,
+                        subtitle: subtitle,
+                        period: period,
+                        details: details,
+                        gpa: item.gpa,
+                        gpaPrefix: i18n.gpaPrefix,
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
-          ],
+                  );
+                }),
+                ...profile.additionalEducation.map((item) {
+                  final title = i18n.isRussian && item.institutionRu.isNotEmpty
+                      ? item.institutionRu
+                      : item.institution;
+                  final subtitle = i18n.isRussian && item.programRu.isNotEmpty
+                      ? item.programRu
+                      : item.program;
+                  final details = i18n.isRussian && item.detailsRu.isNotEmpty
+                      ? item.detailsRu
+                      : item.details;
+                  final period = i18n.isRussian && item.periodRu.isNotEmpty
+                      ? item.periodRu
+                      : item.period;
+
+                  return SizedBox(
+                    width: cardWidth,
+                    child: GlassCard(
+                      child: _EducationCard(
+                        title: title,
+                        subtitle: subtitle,
+                        period: period,
+                        details: details,
+                        gpa: item.gpa,
+                        gpaPrefix: i18n.gpaPrefix,
+                      ),
+                    ),
+                  );
+                }),
+              ],
+            );
+          },
         ),
       ],
     );
@@ -121,16 +130,16 @@ class _EducationCard extends StatelessWidget {
           subtitle,
           style: Theme.of(
             context,
-          ).textTheme.bodyMedium?.copyWith(color: AppPalette.secondary),
+          ).textTheme.bodyMedium?.copyWith(color: AppPalette.accent),
         ),
         const SizedBox(height: 8),
         Row(
           children: [
             Text(
               period,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppPalette.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: AppPalette.textSecondary),
             ),
             if (gpa.isNotEmpty) ...[
               const SizedBox(width: 14),

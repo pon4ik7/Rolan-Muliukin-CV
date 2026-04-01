@@ -11,7 +11,7 @@ class PortfolioApp extends StatelessWidget {
     return MaterialApp(
       title: 'Rolan Muliukin | Backend Developer',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.cafeTheme,
       home: const HomeScreen(),
     );
   }

@@ -32,31 +32,36 @@ class HeroSection extends StatelessWidget {
         i18n.isRussian && profile.availabilityBadgeRu.isNotEmpty
         ? profile.availabilityBadgeRu
         : profile.availabilityBadge;
-    final displayName =
-        i18n.isRussian && profile.nameRu.isNotEmpty ? profile.nameRu : profile.name;
-    final role =
-        i18n.isRussian && profile.roleRu.isNotEmpty ? profile.roleRu : profile.role;
+    final displayName = i18n.isRussian && profile.nameRu.isNotEmpty
+        ? profile.nameRu
+        : profile.name;
+    final role = i18n.isRussian && profile.roleRu.isNotEmpty
+        ? profile.roleRu
+        : profile.role;
     final headline = i18n.isRussian && profile.headlineRu.isNotEmpty
         ? profile.headlineRu
         : profile.headline;
 
     return AnimatedReveal(
       child: Container(
-        padding: EdgeInsets.fromLTRB(24, isCompact ? 20 : 42, 24, 32),
+        padding: EdgeInsets.fromLTRB(24, isCompact ? 24 : 44, 24, 34),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
-          gradient: const LinearGradient(
+          borderRadius: BorderRadius.circular(30),
+          gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF152749), Color(0xFF0C1530), Color(0xFF0A1126)],
+            colors: [
+              AppPalette.surface,
+              AppPalette.secondary.withOpacity(0.88),
+              AppPalette.surfaceAlt,
+            ],
           ),
-          border: Border.all(color: AppPalette.border.withOpacity(0.7)),
+          border: Border.all(color: AppPalette.border),
           boxShadow: [
             BoxShadow(
-              color: AppPalette.primary.withOpacity(0.2),
-              blurRadius: 40,
-              spreadRadius: 2,
-              offset: const Offset(0, 12),
+              color: AppPalette.primary.withOpacity(0.1),
+              blurRadius: 36,
+              offset: const Offset(0, 16),
             ),
           ],
         ),
@@ -64,17 +69,17 @@ class HeroSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
               decoration: BoxDecoration(
-                color: AppPalette.success.withOpacity(0.15),
+                color: AppPalette.success.withOpacity(0.12),
                 borderRadius: BorderRadius.circular(999),
-                border: Border.all(color: AppPalette.success.withOpacity(0.5)),
+                border: Border.all(color: AppPalette.success.withOpacity(0.45)),
               ),
               child: Text(
                 availabilityBadge,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppPalette.success,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -82,19 +87,19 @@ class HeroSection extends StatelessWidget {
             Text(
               displayName,
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontSize: isCompact ? 42 : 62,
-                height: 1,
+                fontSize: isCompact ? 40 : 66,
+                height: 0.98,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 8),
             Text(
               role,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: isCompact ? 24 : 30,
-                color: AppPalette.secondary,
+                fontSize: isCompact ? 23 : 31,
+                color: AppPalette.accent,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 14),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 760),
               child: Text(
@@ -111,7 +116,7 @@ class HeroSection extends StatelessWidget {
               children: [
                 FilledButton.icon(
                   onPressed: onProjectsTap,
-                  icon: const Icon(Icons.rocket_launch_outlined),
+                  icon: const Icon(Icons.coffee_outlined),
                   label: Text(i18n.viewProjects),
                 ),
                 OutlinedButton.icon(
@@ -125,17 +130,17 @@ class HeroSection extends StatelessWidget {
                     icon: const Icon(Icons.download_outlined),
                     label: Text(i18n.downloadCvLabel(selectedCvLanguage)),
                   ),
-                TextButton.icon(
+                OutlinedButton.icon(
                   onPressed: () => launchExternalLink(profile.links.github),
                   icon: const Icon(Icons.code),
                   label: Text(i18n.github),
                 ),
-                TextButton.icon(
+                OutlinedButton.icon(
                   onPressed: () => launchExternalLink(profile.links.leetcode),
                   icon: const Icon(Icons.bolt_outlined),
                   label: Text(i18n.leetcode),
                 ),
-                TextButton.icon(
+                OutlinedButton.icon(
                   onPressed: () => launchExternalLink(profile.links.codeforces),
                   icon: const Icon(Icons.leaderboard_outlined),
                   label: Text(i18n.codeforces),
@@ -146,7 +151,9 @@ class HeroSection extends StatelessWidget {
             Wrap(
               spacing: 10,
               runSpacing: 10,
-              children: profile.primaryStack.map((item) => SkillChip(label: item)).toList(),
+              children: profile.primaryStack
+                  .map((item) => SkillChip(label: item))
+                  .toList(),
             ),
           ],
         ),

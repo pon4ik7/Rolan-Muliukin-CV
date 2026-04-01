@@ -16,18 +16,17 @@ class SectionTitle extends StatelessWidget {
         Text(
           title.toUpperCase(),
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: AppPalette.secondary,
+            color: AppPalette.accent,
             fontWeight: FontWeight.w700,
-            letterSpacing: 1.3,
+            letterSpacing: 1.4,
           ),
         ),
         const SizedBox(height: 8),
         Text(
           subtitle,
-          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-            fontSize: 34,
-            height: 1.15,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.headlineLarge?.copyWith(fontSize: 36, height: 1.08),
         ),
       ],
     );

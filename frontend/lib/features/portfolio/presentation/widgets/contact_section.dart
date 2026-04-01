@@ -31,10 +31,7 @@ class ContactSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionTitle(
-          title: i18n.contactTitle,
-          subtitle: i18n.contactSubtitle,
-        ),
+        SectionTitle(title: i18n.contactTitle, subtitle: i18n.contactSubtitle),
         const SizedBox(height: 20),
         GlassCard(
           child: Column(
@@ -50,7 +47,8 @@ class ContactSection extends StatelessWidget {
                 runSpacing: 10,
                 children: [
                   FilledButton.icon(
-                    onPressed: () => launchExternalLink(profile.links.contactMail),
+                    onPressed: () =>
+                        launchExternalLink(profile.links.contactMail),
                     icon: const Icon(Icons.mail_outline),
                     label: Text(profile.contacts.email),
                   ),
@@ -86,11 +84,11 @@ class ContactSection extends StatelessWidget {
                 spacing: 14,
                 runSpacing: 10,
                 children: [
-                  _MetaChip(icon: Icons.phone_outlined, text: profile.contacts.phone),
                   _MetaChip(
-                    icon: Icons.location_on_outlined,
-                    text: location,
+                    icon: Icons.phone_outlined,
+                    text: profile.contacts.phone,
                   ),
+                  _MetaChip(icon: Icons.location_on_outlined, text: location),
                 ],
               ),
             ],
@@ -119,7 +117,7 @@ class _MetaChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 16, color: AppPalette.secondary),
+          Icon(icon, size: 16, color: AppPalette.accent),
           const SizedBox(width: 6),
           Text(text),
         ],
