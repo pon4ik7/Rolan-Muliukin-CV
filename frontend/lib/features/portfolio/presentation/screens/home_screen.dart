@@ -8,7 +8,6 @@ import '../state/portfolio_controller.dart';
 import '../widgets/about_section.dart';
 import '../widgets/achievements_section.dart';
 import '../widgets/animated_reveal.dart';
-import '../widgets/app_footer.dart';
 import '../widgets/app_nav_bar.dart';
 import '../widgets/contact_section.dart';
 import '../widgets/education_section.dart';
@@ -143,9 +142,6 @@ class _HomeScreenState extends State<HomeScreen> {
       case PortfolioStatus.ready:
         final bundle = _controller.bundle!;
         final cvSelection = _resolveCvSelection(bundle.profile.links);
-        final footerName = i18n.isRussian && bundle.profile.nameRu.isNotEmpty
-            ? bundle.profile.nameRu
-            : bundle.profile.name;
 
         return Scaffold(
           body: Stack(
@@ -179,87 +175,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 1240),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              HeroSection(
-                                profile: bundle.profile,
-                                i18n: i18n,
-                                selectedCvLanguage: cvSelection.language,
-                                onDownloadCv: cvSelection.hasValue
-                                    ? () => launchExternalLink(cvSelection.url)
-                                    : null,
-                                onProjectsTap: () =>
-                                    _scrollToSection('projects'),
-                                onContactTap: () =>
-                                    _scrollToSection('contacts'),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['about'],
-                                delayMs: 50,
-                                child: AboutSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['stack'],
-                                delayMs: 80,
-                                child: TechStackSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['experience'],
-                                delayMs: 110,
-                                child: ExperienceSection(
-                                  items: bundle.experience,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['projects'],
-                                delayMs: 130,
-                                child: ProjectsSection(
-                                  items: bundle.projects,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['education'],
-                                delayMs: 150,
-                                child: EducationSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['achievements'],
-                                delayMs: 170,
-                                child: AchievementsSection(
-                                  items: bundle.achievements,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                child: SoftSkillsSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              AnimatedReveal(
-                                key: _sectionKeys['contacts'],
-                                delayMs: 190,
-                                child: ContactSection(
+                          child: AnimatedSize(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOutCubic,
+                            alignment: Alignment.topCenter,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                HeroSection(
                                   profile: bundle.profile,
                                   i18n: i18n,
                                   selectedCvLanguage: cvSelection.language,
@@ -267,10 +190,90 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ? () =>
                                             launchExternalLink(cvSelection.url)
                                       : null,
+                                  onProjectsTap: () =>
+                                      _scrollToSection('projects'),
+                                  onContactTap: () =>
+                                      _scrollToSection('contacts'),
                                 ),
-                              ),
-                              AppFooter(name: footerName, i18n: i18n),
-                            ],
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['about'],
+                                  delayMs: 50,
+                                  child: AboutSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['stack'],
+                                  delayMs: 80,
+                                  child: TechStackSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['experience'],
+                                  delayMs: 110,
+                                  child: ExperienceSection(
+                                    items: bundle.experience,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['projects'],
+                                  delayMs: 130,
+                                  child: ProjectsSection(
+                                    items: bundle.projects,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['education'],
+                                  delayMs: 150,
+                                  child: EducationSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['achievements'],
+                                  delayMs: 170,
+                                  child: AchievementsSection(
+                                    items: bundle.achievements,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  child: SoftSkillsSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['contacts'],
+                                  delayMs: 190,
+                                  child: ContactSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                    selectedCvLanguage: cvSelection.language,
+                                    onDownloadCv: cvSelection.hasValue
+                                        ? () => launchExternalLink(
+                                            cvSelection.url,
+                                          )
+                                        : null,
+                                  ),
+                                ),
+                                const SizedBox(height: 24),
+                              ],
+                            ),
                           ),
                         ),
                       ),

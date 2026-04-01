@@ -19,50 +19,50 @@ class AppPalette {
 
 class AppTheme {
   static ThemeData get cafeTheme {
-    final textTheme = GoogleFonts.poppinsTextTheme().copyWith(
-      bodySmall: GoogleFonts.poppins(
+    final textTheme = GoogleFonts.notoSansTextTheme().copyWith(
+      bodySmall: GoogleFonts.notoSans(
         color: AppPalette.textSecondary,
         fontSize: 13,
         height: 1.45,
       ),
-      bodyMedium: GoogleFonts.poppins(
+      bodyMedium: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 16,
         height: 1.58,
       ),
-      bodyLarge: GoogleFonts.poppins(
+      bodyLarge: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 18,
         height: 1.62,
       ),
-      labelLarge: GoogleFonts.poppins(
+      labelLarge: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
-      titleMedium: GoogleFonts.poppins(
+      titleMedium: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 20,
         fontWeight: FontWeight.w700,
         height: 1.3,
       ),
-      titleLarge: GoogleFonts.poppins(
+      titleLarge: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 30,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w700,
         height: 1.2,
       ),
-      headlineMedium: GoogleFonts.poppins(
+      headlineMedium: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 42,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w700,
         letterSpacing: -0.8,
         height: 1.06,
       ),
-      headlineLarge: GoogleFonts.poppins(
+      headlineLarge: GoogleFonts.notoSans(
         color: AppPalette.textPrimary,
         fontSize: 56,
-        fontWeight: FontWeight.w900,
+        fontWeight: FontWeight.w800,
         letterSpacing: -1.2,
         height: 1.0,
       ),
@@ -138,7 +138,7 @@ class AppTheme {
           color: AppPalette.textPrimary,
           borderRadius: BorderRadius.circular(10),
         ),
-        textStyle: GoogleFonts.poppins(
+        textStyle: GoogleFonts.notoSans(
           color: AppPalette.onPrimary,
           fontSize: 12,
           fontWeight: FontWeight.w500,
@@ -146,7 +146,7 @@ class AppTheme {
       ),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: AppPalette.textPrimary,
-        contentTextStyle: GoogleFonts.poppins(
+        contentTextStyle: GoogleFonts.notoSans(
           color: AppPalette.onPrimary,
           fontWeight: FontWeight.w500,
         ),

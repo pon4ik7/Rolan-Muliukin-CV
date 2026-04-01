@@ -53,6 +53,8 @@ class AppNavBar extends StatelessWidget {
                   Expanded(
                     child: Text(
                       displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: Theme.of(
                         context,
                       ).textTheme.titleMedium?.copyWith(fontSize: 18),
@@ -76,7 +78,7 @@ class AppNavBar extends StatelessWidget {
                       icon: const Icon(Icons.language_outlined, size: 18),
                       label: Text(i18n.switchLanguageButton),
                       style: OutlinedButton.styleFrom(
-                        minimumSize: const Size(0, 38),
+                        minimumSize: const Size(124, 38),
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                       ),
                     ),
@@ -85,34 +87,51 @@ class AppNavBar extends StatelessWidget {
               )
             : Row(
                 children: [
-                  Text(
-                    displayName,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleMedium?.copyWith(fontSize: 20),
+                  SizedBox(
+                    width: 250,
+                    child: Text(
+                      displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleMedium?.copyWith(fontSize: 20),
+                    ),
                   ),
-                  const SizedBox(width: 26),
-                  ...navItems.entries.map(
-                    (entry) => Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: TextButton(
-                        onPressed: () => onScrollToSection(entry.key),
-                        style: TextButton.styleFrom(
-                          backgroundColor: AppPalette.secondary.withOpacity(
-                            0.65,
-                          ),
-                        ),
-                        child: Text(entry.value),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: navItems.entries
+                            .map(
+                              (entry) => Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: TextButton(
+                                  onPressed: () => onScrollToSection(entry.key),
+                                  style: TextButton.styleFrom(
+                                    minimumSize: const Size(112, 40),
+                                    backgroundColor: AppPalette.secondary
+                                        .withOpacity(0.65),
+                                  ),
+                                  child: Text(entry.value),
+                                ),
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(width: 16),
                   Tooltip(
                     message: i18n.switchLanguageTooltip,
                     child: OutlinedButton.icon(
                       onPressed: onToggleLanguage,
                       icon: const Icon(Icons.language_outlined),
                       label: Text(i18n.switchLanguageButton),
+                      style: OutlinedButton.styleFrom(
+                        minimumSize: const Size(148, 40),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -120,6 +139,9 @@ class AppNavBar extends StatelessWidget {
                     onPressed: () => launchExternalLink(profile.links.telegram),
                     icon: const Icon(Icons.send_outlined),
                     label: Text(i18n.telegram),
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size(126, 40),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   if (onDownloadCv != null)
@@ -127,6 +149,9 @@ class AppNavBar extends StatelessWidget {
                       onPressed: onDownloadCv,
                       icon: const Icon(Icons.download_outlined),
                       label: Text(i18n.cvButtonLabel(cvLanguage)),
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size(164, 40),
+                      ),
                     ),
                 ],
               ),
