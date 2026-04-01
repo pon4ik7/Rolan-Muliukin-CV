@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/localization/app_localization.dart';
 import '../../../../core/models/profile_model.dart';
+import '../../../../core/theme/app_theme.dart';
 import 'glass_card.dart';
 import 'section_title.dart';
 
 class SoftSkillsSection extends StatelessWidget {
-  const SoftSkillsSection({required this.profile, required this.i18n, super.key});
+  const SoftSkillsSection({
+    required this.profile,
+    required this.i18n,
+    super.key,
+  });
 
   final ProfileModel profile;
   final AppLocalization i18n;
@@ -31,7 +36,10 @@ class SoftSkillsSection extends StatelessWidget {
                 .map(
                   (item) => ListTile(
                     contentPadding: EdgeInsets.zero,
-                    leading: const Icon(Icons.check_circle_outline),
+                    leading: const Icon(
+                      Icons.check_circle_outline,
+                      color: AppPalette.accent,
+                    ),
                     title: Text(item),
                   ),
                 )

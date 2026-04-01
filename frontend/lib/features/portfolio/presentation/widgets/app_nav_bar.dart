@@ -27,95 +27,135 @@ class AppNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isCompact = MediaQuery.of(context).size.width < 980;
     final navItems = i18n.navItems;
-    final displayName =
-        i18n.isRussian && profile.nameRu.isNotEmpty ? profile.nameRu : profile.name;
+    final displayName = i18n.isRussian && profile.nameRu.isNotEmpty
+        ? profile.nameRu
+        : profile.name;
 
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      decoration: BoxDecoration(
-        color: AppPalette.surfaceAlt.withOpacity(0.85),
-        border: Border(
-          bottom: BorderSide(color: AppPalette.border.withOpacity(0.5)),
-        ),
-      ),
-      child: isCompact
-          ? Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    displayName,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => onScrollToSection('contacts'),
-                  icon: const Icon(Icons.mail_outline),
-                  tooltip: i18n.contactTooltip,
-                ),
-                if (onDownloadCv != null)
-                  IconButton(
-                    onPressed: onDownloadCv,
-                    icon: const Icon(Icons.download_outlined),
-                    tooltip: i18n.downloadCvLabel(cvLanguage),
-                  ),
-                Tooltip(
-                  message: i18n.switchLanguageTooltip,
-                  child: OutlinedButton.icon(
-                    onPressed: onToggleLanguage,
-                    icon: const Icon(Icons.language_outlined, size: 18),
-                    label: Text(i18n.switchLanguageButton),
-                    style: OutlinedButton.styleFrom(
-                      minimumSize: const Size(0, 36),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          : Row(
-              children: [
-                Text(
-                  displayName,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18,
-                  ),
-                ),
-                const SizedBox(width: 24),
-                ...navItems.entries.map(
-                  (entry) => Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: TextButton(
-                      onPressed: () => onScrollToSection(entry.key),
-                      child: Text(entry.value),
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Tooltip(
-                  message: i18n.switchLanguageTooltip,
-                  child: OutlinedButton.icon(
-                    onPressed: onToggleLanguage,
-                    icon: const Icon(Icons.language_outlined),
-                    label: Text(i18n.switchLanguageButton),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                OutlinedButton.icon(
-                  onPressed: () => launchExternalLink(profile.links.telegram),
-                  icon: const Icon(Icons.send_outlined),
-                  label: Text(i18n.telegram),
-                ),
-                const SizedBox(width: 10),
-                if (onDownloadCv != null)
-                  FilledButton.tonalIcon(
-                    onPressed: onDownloadCv,
-                    icon: const Icon(Icons.download_outlined),
-                    label: Text(i18n.cvButtonLabel(cvLanguage)),
-                  ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+        decoration: BoxDecoration(
+          color: AppPalette.surface.withOpacity(0.88),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppPalette.border),
+          boxShadow: [
+            BoxShadow(
+              color: AppPalette.primary.withOpacity(0.07),
+              blurRadius: 26,
+              offset: const Offset(0, 12),
             ),
+          ],
+        ),
+        child: isCompact
+            ? Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleMedium?.copyWith(fontSize: 18),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () => onScrollToSection('contacts'),
+                    icon: const Icon(Icons.mail_outline),
+                    tooltip: i18n.contactTooltip,
+                  ),
+                  if (onDownloadCv != null)
+                    IconButton(
+                      onPressed: onDownloadCv,
+                      icon: const Icon(Icons.download_outlined),
+                      tooltip: i18n.downloadCvLabel(cvLanguage),
+                    ),
+                  Tooltip(
+                    message: i18n.switchLanguageTooltip,
+                    child: OutlinedButton.icon(
+                      onPressed: onToggleLanguage,
+                      icon: const Icon(Icons.language_outlined, size: 18),
+                      label: Text(i18n.switchLanguageButton),
+                      style: OutlinedButton.styleFrom(
+                        minimumSize: const Size(124, 38),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            : Row(
+                children: [
+                  SizedBox(
+                    width: 250,
+                    child: Text(
+                      displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleMedium?.copyWith(fontSize: 20),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: navItems.entries
+                            .map(
+                              (entry) => Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: TextButton(
+                                  onPressed: () => onScrollToSection(entry.key),
+                                  style: TextButton.styleFrom(
+                                    minimumSize: const Size(112, 40),
+                                    backgroundColor: AppPalette.secondary
+                                        .withOpacity(0.65),
+                                  ),
+                                  child: Text(entry.value),
+                                ),
+                              ),
+                            )
+                            .toList(),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Tooltip(
+                    message: i18n.switchLanguageTooltip,
+                    child: OutlinedButton.icon(
+                      onPressed: onToggleLanguage,
+                      icon: const Icon(Icons.language_outlined),
+                      label: Text(i18n.switchLanguageButton),
+                      style: OutlinedButton.styleFrom(
+                        minimumSize: const Size(148, 40),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  OutlinedButton.icon(
+                    onPressed: () => launchExternalLink(profile.links.telegram),
+                    icon: const Icon(Icons.send_outlined),
+                    label: Text(i18n.telegram),
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size(126, 40),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  if (onDownloadCv != null)
+                    FilledButton.icon(
+                      onPressed: onDownloadCv,
+                      icon: const Icon(Icons.download_outlined),
+                      label: Text(i18n.cvButtonLabel(cvLanguage)),
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size(164, 40),
+                      ),
+                    ),
+                ],
+              ),
+      ),
     );
   }
 }

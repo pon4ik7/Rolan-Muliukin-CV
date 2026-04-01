@@ -8,7 +8,6 @@ import '../state/portfolio_controller.dart';
 import '../widgets/about_section.dart';
 import '../widgets/achievements_section.dart';
 import '../widgets/animated_reveal.dart';
-import '../widgets/app_footer.dart';
 import '../widgets/app_nav_bar.dart';
 import '../widgets/contact_section.dart';
 import '../widgets/education_section.dart';
@@ -114,8 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
         language: AppLanguage.en,
       );
     }
-    final hasLegacyCv = links.cvDownload.isNotEmpty &&
-        !links.cvDownload.startsWith('TODO_');
+    final hasLegacyCv =
+        links.cvDownload.isNotEmpty && !links.cvDownload.startsWith('TODO_');
     if (hasLegacyCv) {
       return _CvDownloadSelection(
         url: links.cvDownload,
@@ -143,10 +142,6 @@ class _HomeScreenState extends State<HomeScreen> {
       case PortfolioStatus.ready:
         final bundle = _controller.bundle!;
         final cvSelection = _resolveCvSelection(bundle.profile.links);
-        final footerName =
-            i18n.isRussian && bundle.profile.nameRu.isNotEmpty
-            ? bundle.profile.nameRu
-            : bundle.profile.name;
 
         return Scaffold(
           body: Stack(
@@ -157,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 slivers: [
                   SliverAppBar(
                     pinned: true,
-                    toolbarHeight: 74,
+                    toolbarHeight: 82,
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                     automaticallyImplyLeading: false,
@@ -176,99 +171,109 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 22, 20, 0),
+                      padding: const EdgeInsets.fromLTRB(20, 28, 20, 0),
                       child: Center(
                         child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 1220),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              HeroSection(
-                                profile: bundle.profile,
-                                i18n: i18n,
-                                selectedCvLanguage: cvSelection.language,
-                                onDownloadCv: cvSelection.hasValue
-                                    ? () => launchExternalLink(cvSelection.url)
-                                    : null,
-                                onProjectsTap: () => _scrollToSection('projects'),
-                                onContactTap: () => _scrollToSection('contacts'),
-                              ),
-                              const SizedBox(height: 42),
-                              AnimatedReveal(
-                                key: _sectionKeys['about'],
-                                delayMs: 50,
-                                child: AboutSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['stack'],
-                                delayMs: 80,
-                                child: TechStackSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['experience'],
-                                delayMs: 110,
-                                child: ExperienceSection(
-                                  items: bundle.experience,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['projects'],
-                                delayMs: 130,
-                                child: ProjectsSection(
-                                  items: bundle.projects,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['education'],
-                                delayMs: 150,
-                                child: EducationSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['achievements'],
-                                delayMs: 170,
-                                child: AchievementsSection(
-                                  items: bundle.achievements,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                child: SoftSkillsSection(
-                                  profile: bundle.profile,
-                                  i18n: i18n,
-                                ),
-                              ),
-                              const SizedBox(height: 44),
-                              AnimatedReveal(
-                                key: _sectionKeys['contacts'],
-                                delayMs: 190,
-                                child: ContactSection(
+                          constraints: const BoxConstraints(maxWidth: 1240),
+                          child: AnimatedSize(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOutCubic,
+                            alignment: Alignment.topCenter,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                HeroSection(
                                   profile: bundle.profile,
                                   i18n: i18n,
                                   selectedCvLanguage: cvSelection.language,
                                   onDownloadCv: cvSelection.hasValue
-                                      ? () => launchExternalLink(cvSelection.url)
+                                      ? () =>
+                                            launchExternalLink(cvSelection.url)
                                       : null,
+                                  onProjectsTap: () =>
+                                      _scrollToSection('projects'),
+                                  onContactTap: () =>
+                                      _scrollToSection('contacts'),
                                 ),
-                              ),
-                              AppFooter(name: footerName, i18n: i18n),
-                            ],
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['about'],
+                                  delayMs: 50,
+                                  child: AboutSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['stack'],
+                                  delayMs: 80,
+                                  child: TechStackSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['experience'],
+                                  delayMs: 110,
+                                  child: ExperienceSection(
+                                    items: bundle.experience,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['projects'],
+                                  delayMs: 130,
+                                  child: ProjectsSection(
+                                    items: bundle.projects,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['education'],
+                                  delayMs: 150,
+                                  child: EducationSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['achievements'],
+                                  delayMs: 170,
+                                  child: AchievementsSection(
+                                    items: bundle.achievements,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  child: SoftSkillsSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                  ),
+                                ),
+                                const SizedBox(height: 48),
+                                AnimatedReveal(
+                                  key: _sectionKeys['contacts'],
+                                  delayMs: 190,
+                                  child: ContactSection(
+                                    profile: bundle.profile,
+                                    i18n: i18n,
+                                    selectedCvLanguage: cvSelection.language,
+                                    onDownloadCv: cvSelection.hasValue
+                                        ? () => launchExternalLink(
+                                            cvSelection.url,
+                                          )
+                                        : null,
+                                  ),
+                                ),
+                                const SizedBox(height: 24),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -300,29 +305,47 @@ class _BackgroundGlow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
+          begin: Alignment.topLeft,
           end: Alignment.bottomCenter,
-          colors: [Color(0xFF060B18), Color(0xFF070D1B), Color(0xFF050A16)],
+          colors: [
+            AppPalette.background,
+            AppPalette.secondary.withOpacity(0.45),
+            AppPalette.background,
+          ],
         ),
       ),
       child: Stack(
         children: [
           Positioned(
-            top: -140,
-            left: -120,
+            top: -190,
+            left: -110,
             child: _GlowCircle(
-              size: 370,
-              colors: const [Color(0x553E8BFF), Color(0x113E8BFF)],
+              size: 400,
+              colors: [
+                AppPalette.primary.withOpacity(0.15),
+                Colors.transparent,
+              ],
             ),
           ),
           Positioned(
-            top: 260,
-            right: -90,
+            top: 250,
+            right: -120,
+            child: _GlowCircle(
+              size: 320,
+              colors: [AppPalette.accent.withOpacity(0.12), Colors.transparent],
+            ),
+          ),
+          Positioned(
+            bottom: -140,
+            left: -80,
             child: _GlowCircle(
               size: 280,
-              colors: const [Color(0x4435D5FF), Color(0x1135D5FF)],
+              colors: [
+                AppPalette.warning.withOpacity(0.08),
+                Colors.transparent,
+              ],
             ),
           ),
         ],

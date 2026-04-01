@@ -36,9 +36,11 @@ class _LoadingSkeletonState extends State<LoadingSkeleton>
               height: 118,
               margin: const EdgeInsets.only(bottom: 14),
               decoration: BoxDecoration(
-                color: AppPalette.surface.withOpacity(alpha.clamp(0.1, 0.35)),
+                color: AppPalette.secondary.withOpacity(
+                  alpha.clamp(0.15, 0.32),
+                ),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: AppPalette.border.withOpacity(0.3)),
+                border: Border.all(color: AppPalette.border.withOpacity(0.7)),
               ),
             );
           }),
